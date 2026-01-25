@@ -63,10 +63,12 @@ body {
 
 .header-left img {
   max-height: 120px;
+  padding-left: 15px;
 }
 
 .header-right img {
   max-height: 80px;
+  padding-right: 15px;
 }
 
 .header ul {

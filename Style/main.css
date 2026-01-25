@@ -15,10 +15,6 @@ body, html {
   font-style: normal;
 }
 	
-body {
-
-}
-
 .spratley-logo {
   background: repeating-radial-gradient(
     circle at center,
@@ -28,12 +24,20 @@ body {
     var(--spratley-bg-light) 10%
   );
   border-radius: 50%;
-  padding-top: 7px;
-  padding-bottom: 8px;
-  padding-left: 0;
-  padding-right: 10px;
-
+  padding: 7px 10px 8px 0px;
   margin: 0px 10px;
+
+  transition: all 0.3s ease;
+}
+
+.spratley-logo img {
+  height: 130px;
+  width: auto;
+  display: block;
+}
+
+.spratley-logo:hover {
+  rotate: 5deg;
 }
 
 .spratley-text h1, .spratley-text h2 {
@@ -48,10 +52,6 @@ body {
 
 .spratley-text h2 {
   font-size: 24px;
-}
-
-.header-left img {
-  max-height: 120px;
 }
 
 .header-left li{
@@ -106,4 +106,13 @@ header {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.social-icons {
+  transition: all 0.3s ease;
+}
+
+.social-icons:hover {
+  transform: scale(1.1);
+  rotate: -3deg;
 }

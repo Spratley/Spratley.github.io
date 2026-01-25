@@ -2,107 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Spratley Games</title>
-  <style>
-    html, body {
-		margin: 0;
-		padding: 0;
-		height: 100%;
-		background-color: #139595;
-		overflow: hidden;
-		position: relative;
-    }
+  <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
+  <link rel="stylesheet" href="Style/main.css">
 
-    .background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 0;
-		pointer-events: none;
-    }
-	
-	.content {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		width: 100vw;
-	}
-	
-	.content img {
-		max-width: 50%;
-		max-height: 50%;
-		object-fit: contain;
-	}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
 
-    svg {
-		width: 100%;
-		height: 100%;
-		display: block;
-    }
-  </style>
 </head>
 <body>
-	<div class="background">
-		<svg viewBox="0 0 5000 5000" preserveAspectRatio="xMidYMid slice">
-			<defs>
-				<filter id="flowy" color-interpolation-filters="sRGB" x="0%" y="0%" height="100%" width="100%">
-					<feTurbulence type="fractalNoise" result="baseNoise" baseFrequency=".001" numOctaves="2" seed="0"/>
-					<!-- Animate X and Y independantly -->
-					<feColorMatrix in="baseNoise" type="hueRotate" values="0" result="displacementX">
-						<animate attributeName="values" from="0" to="360" dur="4.333" repeatCount="indefinite"/>
-					</feColorMatrix>
-					<feColorMatrix in="baseNoise" type="hueRotate" values="0" result="displacementY">
-						<animate attributeName="values" from="0" to="360" dur="4.5" repeatCount="indefinite"/>
-					</feColorMatrix>
-					<!-- Merge result into single displacement sample -->
-					<feColorMatrix in="displacementX" type="matrix" values="
-						1 0 0 0 0
-						0 0 0 0 0
-						0 0 0 0 0
-						0 0 0 1 0" result="rChannel"/>
-					<feColorMatrix in="displacementY" type="matrix" values="
-						0 0 0 0 0
-						0 1 0 0 0
-						0 0 0 0 0
-						0 0 0 1 0" result="gChannel"/>
-					<feBlend in="rChannel" in2="gChannel" mode="lighten" result="displacement"/>
-					<!-- Displace SVG rings -->
-					<feDisplacementMap in="SourceGraphic" in2="displacement" scale="200" xChannelSelector="R" yChannelSelector="G">
-					</feDisplacementMap>
-				</filter>
-			</defs>
-	
-			<g filter="url(#flowy)">
-				<circle cx="2500" cy="2500" r="0050" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="0250" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="0450" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="0650" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="0850" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="1050" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="1250" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="1450" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="1650" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="1850" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="2050" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="2250" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="2450" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="2650" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="2850" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="3050" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="3250" stroke="#24c4c4" stroke-width="100" fill="none" />
-				<circle cx="2500" cy="2500" r="3450" stroke="#24c4c4" stroke-width="100" fill="none" />
-			</g>
-		</svg>
-	</div>
-	
-	<div class="content">
-		<img src="Images/Spratley_Logo.png">
-	</div>
+  <header class="header">
+    <div class="header-left">
+      <ul>
+        <li>
+          <a href="index.html">
+            <img src="Images/Spratley_Logo.png" alt="Spratley Games">
+          </a>
+        </li>
+        <li>
+          <p>Spratley</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="header-right">
+      <ul>
+        <li>  
+          <a href="https://spratley.itch.io/" target="_blank" rel="noopener noreferrer">
+            <img src="Images/SocialIcon_Itch.webp" alt="Itch.io">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Spratley" target="_blank" rel="noopener noreferrer">
+            <img src="Images/SocialIcon_Github.png" alt="Github">
+          </a>
+        </li>
+      </div>
+    </ul>
+  </header>
+  <div class="content">
+    <p>
+      I'm not a web developer nor designer lol
+    </p>
+    <img src="Images/Spratley_Logo.png" alt="Spratley Logo">
+  </div>
 </body>
 </html>

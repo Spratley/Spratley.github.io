@@ -4,17 +4,95 @@
   --spratley-bg-black: #0D1321;
 }
 
+@font-face {
+  font-family: 'Kiwi Maru';
+  src: url('../Fonts/KiwiMaru-Regular.woff2') format('woff2'),
+       url('../Fonts/KiwiMaru-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
   
   font-family: "Kiwi Maru", serif;
   font-weight: 400;
   font-style: normal;
 }
+
+body{
+  background-color: var(--spratley-bg-light)
+}
 	
+header {
+  position: relative;
+  width: 100%;
+  background-color: var(--spratley-bg-black);
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-contents {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px 25px;
+}
+
+.spratley {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spratley h1, .spratley .translation {
+  color: white;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.spratley h1 {
+  font-size: 60px;
+}
+
+.spratley .translation {
+  font-size: 24px;
+  cursor: default;
+  position: relative;
+  display: inline-block;
+  width: max-content;
+}
+
+.spratley .translation span:not(.sizer) {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.translation .en {
+  opacity: 0;
+}
+
+.translation:hover .jp {
+  opacity: 0;
+}
+
+.translation:hover .en {
+  opacity: 1;
+}
+
+.translation .sizer {
+  visibility: hidden;
+}
+
 .spratley-logo {
   background: repeating-radial-gradient(
     circle at center,
@@ -25,9 +103,12 @@ body, html {
   );
   border-radius: 50%;
   padding: 7px 10px 8px 0px;
-  margin: 0px 10px;
 
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.spratley-logo:hover {
+  transform: scale(1.01) rotate(5deg);
 }
 
 .spratley-logo img {
@@ -36,36 +117,29 @@ body, html {
   display: block;
 }
 
-.spratley-logo:hover {
-  rotate: 5deg;
+@keyframes scroll-horizontal
+{
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 256px 0;
+  }
 }
 
-.spratley-text h1, .spratley-text h2 {
-  color: white;
-  margin: 0;
-  line-height: 1.5;
-}
+.sine-wave {
+  width: 100%;
+  height: 8px;
 
-.spratley-text h1 {
-  font-size: 60px;
-}
-
-.spratley-text h2 {
-  font-size: 24px;
-}
-
-.header-left li{
-  float: left;
+  background-image: url('../Images/Sine_Dark.webp');
+  animation: scroll-horizontal 4s linear infinite;
 }
 
 .content {
+  width: 100%;
   position: relative;
-  z-index: 10;
-  height: 100vh;
-  display: none;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
 }
 
 .content img {
@@ -74,45 +148,20 @@ body, html {
   filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
 }
 
-header {
-  position: fixed;
-  width: 100%;
-  background-color: var(--spratley-bg-black);
-  padding: 12px;
-}
-
-.header-contents {
-  width: 100%;
-  max-width: 1400px;
+.header-social {
+  display: flex;
   align-items: center;
-  margin: auto;
+  gap: 25px;
 }
 
-.header-right {
-  float: right;
-}
-
-.header-right li {
-  float: right;
-  padding: 20px 10px;
-}
-
-.header-right img {
+.header-social img {
   max-height: 80px;
-  padding-right: 15px;
-}
-
-.header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .social-icons {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .social-icons:hover {
-  transform: scale(1.1);
-  rotate: -3deg;
+  transform: scale(1.1) rotate(-3deg);
 }

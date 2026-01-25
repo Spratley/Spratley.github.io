@@ -1,0 +1,8 @@
+# Files prefixed with GitIgnore_
+GitIgnore_*
+
+# Krita temporaries
+*~
+
+# Non-webfont font files
+*.ttf

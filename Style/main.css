@@ -16,20 +16,53 @@ body, html {
 }
 	
 body {
+
+}
+
+.spratley-logo {
   background: repeating-radial-gradient(
     circle at center,
     var(--spratley-bg-deep),
-    var(--spratley-bg-deep) 2vmax,
-    var(--spratley-bg-light) 2vmax,
-    var(--spratley-bg-light) 4vmax
-    );
+    var(--spratley-bg-deep) 5%,
+    var(--spratley-bg-light) 5%,
+    var(--spratley-bg-light) 10%
+  );
+  border-radius: 50%;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  padding-left: 0;
+  padding-right: 10px;
+
+  margin: 0px 10px;
+}
+
+.spratley-text h1, .spratley-text h2 {
+  color: white;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.spratley-text h1 {
+  font-size: 60px;
+}
+
+.spratley-text h2 {
+  font-size: 24px;
+}
+
+.header-left img {
+  max-height: 120px;
+}
+
+.header-left li{
+  float: left;
 }
 
 .content {
   position: relative;
   z-index: 10;
   height: 100vh;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   pointer-events: none;
@@ -41,15 +74,18 @@ body {
   filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
 }
 
-.header {
+header {
   position: fixed;
+  width: 100%;
   background-color: var(--spratley-bg-black);
+  padding: 12px;
+}
+
+.header-contents {
   width: 100%;
   max-width: 1400px;
-  padding: 12px;
   align-items: center;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: auto;
 }
 
 .header-right {
@@ -61,11 +97,6 @@ body {
   padding: 20px 10px;
 }
 
-.header-left img {
-  max-height: 120px;
-  padding-left: 15px;
-}
-
 .header-right img {
   max-height: 80px;
   padding-right: 15px;
@@ -75,16 +106,4 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.header-left li{
-  float: left;
-}
-
-.header p {
-  color: white;
-  font-size: 60px;
-  margin: 0;
-  line-height: 1.5;
-  padding: 10px;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Spratley Games</title>
@@ -8,6 +9,7 @@
 
   <link rel="preload" href="/Images/Spratley_Logo_Cropped.webp" as="image">
 </head>
+
 <body>
   <header>
     <div class="header-contents">
@@ -24,9 +26,9 @@
           </div>
         </li>
       </ul>
-      
+
       <ul class="header-social">
-        <li class="social-icons">  
+        <li class="social-icons">
           <a href="https://spratley.itch.io/" target="_blank" rel="noopener noreferrer">
             <img src="/Images/SocialIcon_Itch.webp" alt="Check out my games at spratley.itch.io!">
           </a>
@@ -49,8 +51,31 @@
       </ul>
     </div>
   </header>
+
   <div class="content">
-  <div class="sine-wave"></div>
-</div>
+    <div class="sine-wave"></div>
+    <div class="content-body">
+      <h2>A lifelong passion for games</h2>
+      <div class="stats-container">
+        <div class="stat-card">
+          <h3>Working AAA</h3>
+          <div class="stats-number" id="aaa-dev-years"></div>
+        </div>
+        <div class="stat-card">
+          <h3>As a Developer</h3>
+          <div class="stats-number" id="total-dev-years"></div>
+        </div>
+        <div class="stat-card">
+          <h3>First Game Made</h3>
+          <div class="stats-number" id="baby-dev-years"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Post-document Scripts -->
+  <script src="/Scripts/DateCalculator.js"></script>
 </body>
+
 </html>

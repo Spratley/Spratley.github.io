@@ -32,21 +32,21 @@ function PreciseDuration(startDate) {
 }
 
 function FormatDuration(dur) {
-  // Define the units and their labels for the loop
+  // Define the units and their labels
   const units = [
-    { val: dur.years, label: 'Years' },
-    { val: dur.months, label: 'Months' },
-    { val: dur.days, label: 'Days' },
-    { val: dur.hours, label: 'Hours' },
-    { val: dur.minutes, label: 'Minutes' },
-    { val: dur.seconds, label: 'Seconds' }
+    { val: dur.years, label: 'Year' },
+    { val: dur.months, label: 'Month' },
+    { val: dur.days, label: 'Day' },
+    { val: dur.hours, label: 'Hour' },
+    { val: dur.minutes, label: 'Minute' },
+    { val: dur.seconds, label: 'Second' }
   ];
 
-  // Map through units to create the "Value OVER Label" structure
+  // Map through units and conditionally add 's' based on the value
   return units.map(u => `
     <div class="time-block">
       <div class="val">${u.val}</div>
-      <div class="lab">${u.label}</div>
+      <div class="lab">${u.val === 1 ? u.label : u.label + 's'}</div>
     </div>
   `).join('');
 }

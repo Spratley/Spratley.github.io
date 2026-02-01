@@ -88,7 +88,9 @@
 
         <div class="work-visual-side">
           <div class="tilt-wrapper-right">
-            <img src="/Images/FC6.webp" alt="Far Cry 6" class="tilt-img">
+            <a href="https://www.ubisoft.com/en-ca/game/far-cry/far-cry-6" target="_blank" rel="noopener noreferrer">
+              <img src="/Images/FC6.webp" alt="Far Cry 6" class="tilt-img">
+            </a>
           </div>
         </div>
       </div>
@@ -96,14 +98,19 @@
       <div class="work-card-container">
         <div class="work-visual-side">
           <div class="tilt-wrapper-left">
-            <img src="/Images/FC6_LBW.webp" alt="Far Cry 6: Lost Between Worlds" class="tilt-img">
+            <a href="https://www.ign.com/articles/far-cry-6-lost-between-worlds-dlc-review" target="_blank"
+              rel="noopener noreferrer">
+              <img src="/Images/FC6_LBW.webp" alt="Far Cry 6: Lost Between Worlds" class="tilt-img">
+            </a>
           </div>
         </div>
 
         <div class="work-text-side">
           <h1>FAR CRY 6: LOST BETWEEN WORLDS</h1>
           <p class="role-highlight">AI PROGRAMMER - 2021/2022</p>
-          <p>Feature owner for the new <b>Crystal Shardface</b> enemies and <b>FAI's</b> hub world appearance. Facilitated team meetings to iterate on new features for enemy behavior and non-human dialogue sequences.</p>
+          <p>Feature owner for the new <b>Crystal Shardface</b> enemies and <b>FAI's</b> hub world appearance.
+            Facilitated team meetings to iterate on new features for enemy behavior and non-human dialogue sequences.
+          </p>
         </div>
       </div>
 
@@ -116,7 +123,7 @@
 
         <div class="work-visual-side">
           <div class="tilt-wrapper-right">
-            <img src="/Images/Unknown.webp" alt="Unannounced Game" class="tilt-img">
+            <img src="/Images/Unknown.webp" alt="Unannounced Game" class="tilt-img" onclick="ShakeElement(this)">
           </div>
         </div>
       </div>
@@ -132,6 +139,17 @@
 
   <!-- Post-document Scripts -->
   <script src="/Scripts/DateCalculator.js"></script>
+
+  <!-- Shake Unannounced Game Card Script -->
+  <script>
+    function ShakeElement(element) {
+      element.classList.add("shake-element");
+      setTimeout(() => {
+        element.classList.remove("shake-element");
+      }, 300);
+    }
+  </script>
+
 </body>
 
 </html>

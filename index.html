@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <title>Spratley Games</title>
   <link rel="icon" type="image/x-icon" href="/Images/Favicon.ico">
-  <link rel="stylesheet" href="Style/main.css">
-
+  <link rel="preload" href="/Fonts/KiwiMaru-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/Images/Spratley_Logo_Cropped.webp" as="image">
+  <link rel="stylesheet" href="Style/main.css">
 </head>
-
 <body>
-  <header>
-    <div class="header-contents">
-      <ul class="spratley">
+  <header class="main-header">
+    <div class="container header-flex">
+      <ul class="spratley-brand">
         <li class="spratley-logo">
           <a href="index.html"><img src="/Images/Spratley_Logo_Cropped.webp" alt="Spratley Games"></a>
         </li>
@@ -28,22 +26,22 @@
       </ul>
 
       <ul class="header-social">
-        <li class="social-icons">
+        <li class="social-icon">
           <a href="https://spratley.itch.io/" target="_blank" rel="noopener noreferrer">
             <img src="/Images/SocialIcon_Itch.webp" alt="Check out my games at spratley.itch.io!">
           </a>
         </li>
-        <li class="social-icons">
+        <li class="social-icon">
           <a href="https://github.com/Spratley" target="_blank" rel="noopener noreferrer">
             <img src="/Images/SocialIcon_Github.png" alt="My Github for code samples and projects">
           </a>
         </li>
-        <li class="social-icons">
+        <li class="social-icon">
           <a href="https://ca.linkedin.com/in/jacob-pratley-1506a3202" target="_blank" rel="noopener noreferrer">
             <img src="/Images/SocialIcon_Linkedin.webp" alt="My LinkedIn">
           </a>
         </li>
-        <li class="social-icons">
+        <li class="social-icon">
           <a href="https://www.youtube.com/@SpratleyGames" target="_blank" rel="noopener noreferrer">
             <img src="/Images/SocialIcon_YouTube.webp" alt="My YouTube Channel">
           </a>
@@ -53,9 +51,9 @@
   </header>
 
   <div class="content">
-    <div class="content-teal">
-      <div class="sine-wave"></div>
-      <div class="content-body">
+    <div class="section is-teal">
+      <div class="sine-wave is-dark"></div>
+      <div class="container section-body">
         <h2>A lifelong passion for games</h2>
         <div class="stats-container">
           <div class="stat-card">
@@ -74,8 +72,8 @@
       </div>
     </div>
 
-    <div class="content-red">
-      <div class="sine-wave-teal"></div>
+    <div class="section is-red">
+      <div class="sine-wave is-teal"></div>
       <h1 class="work-title">My Work</h1>
 
       <div class="work-card-container">
@@ -87,7 +85,7 @@
         </div>
 
         <div class="work-visual-side">
-          <div class="tilt-wrapper-right">
+          <div class="tilt-wrapper is-right">
             <a href="https://www.ubisoft.com/en-ca/game/far-cry/far-cry-6" target="_blank" rel="noopener noreferrer">
               <img src="/Images/FC6.webp" alt="Far Cry 6" class="tilt-img">
             </a>
@@ -97,7 +95,7 @@
 
       <div class="work-card-container">
         <div class="work-visual-side">
-          <div class="tilt-wrapper-left">
+          <div class="tilt-wrapper is-left">
             <a href="https://www.ign.com/articles/far-cry-6-lost-between-worlds-dlc-review" target="_blank"
               rel="noopener noreferrer">
               <img src="/Images/FC6_LBW.webp" alt="Far Cry 6: Lost Between Worlds" class="tilt-img">
@@ -122,7 +120,7 @@
         </div>
 
         <div class="work-visual-side">
-          <div class="tilt-wrapper-right">
+          <div class="tilt-wrapper is-right">
             <img src="/Images/Unknown.webp" alt="Unannounced Game" class="tilt-img" onclick="ShakeElement(this)">
           </div>
         </div>
@@ -132,8 +130,8 @@
 
   </div>
 
-  <footer>
-    <div class="sine-wave-red"></div>
+  <footer class="main-footer">
+    <div class="sine-wave is-red"></div>
     <p><br>© 2026 Spratley Games. All rights reserved.</p>
   </footer>
 
@@ -151,5 +149,4 @@
   </script>
 
 </body>
-
 </html>

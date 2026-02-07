@@ -1,0 +1,22 @@
+{
+    "en": {
+        "title": "Spratley",
+
+        "years": "YEAR",
+        "months": "MONTH",
+        "days": "DAY",
+        "hours": "HOUR",
+        "minutes": "MINUTE",
+        "seconds": "SECOND"
+    },
+    "ja": {
+        "title": "スプラトリー",
+
+        "years": "年",
+        "months": "月",
+        "days": "日",
+        "hours": "時間",
+        "minutes": "分",
+        "seconds": "秒"
+    }
+}

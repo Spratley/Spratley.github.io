@@ -31,22 +31,32 @@ function PreciseDuration(startDate) {
   return { years, months, days, hours, minutes, seconds };
 }
 
+function GetUnitLabel(value, unitKey, language) {
+  const label = translations[language]?.[unitKey] || unitKey;
+
+  if (language === 'en') {
+    return value === 1 ? label : label + 's';
+  }
+  return label;
+}
+
 function FormatDuration(dur) {
+  const language = document.documentElement.lang || 'en';
+
   // Define the units and their labels
   const units = [
-    { val: dur.years, label: 'Year' },
-    { val: dur.months, label: 'Month' },
-    { val: dur.days, label: 'Day' },
-    { val: dur.hours, label: 'Hour' },
-    { val: dur.minutes, label: 'Minute' },
-    { val: dur.seconds, label: 'Second' }
+    { val: dur.years, label: 'years' },
+    { val: dur.months, label: 'months' },
+    { val: dur.days, label: 'days' },
+    { val: dur.hours, label: 'hours' },
+    { val: dur.minutes, label: 'minutes' },
+    { val: dur.seconds, label: 'seconds' }
   ];
 
-  // Map through units and conditionally add 's' based on the value
-  return units.map(u => `
+ return units.map(u => `
     <div class="time-block">
       <div class="val">${u.val}</div>
-      <div class="lab">${u.val === 1 ? u.label : u.label + 's'}</div>
+      <div class="lab">${GetUnitLabel(u.val, u.label, language)}</div>
     </div>
   `).join('');
 }
@@ -57,7 +67,12 @@ const devStart = new Date(2017, 8, 5, 7, 30, 0, 16); // September 5, 2017, 07:30
 const aaaStart = new Date(2020, 4, 4, 9, 0, 45); // May 4, 2020, 09:00 AM
 
 function UpdateCounters() {
-  // Use innerHTML instead of textContent since we are adding spans
+  // Check if translations have loaded yet
+  // If not, skip updating the counters until they are available
+  if (!translations || Object.keys(translations).length === 0) {
+    return;
+  }
+
   document.getElementById('baby-dev-years').innerHTML = FormatDuration(PreciseDuration(babyDevStart));
   document.getElementById('total-dev-years').innerHTML = FormatDuration(PreciseDuration(devStart));
   document.getElementById('aaa-dev-years').innerHTML = FormatDuration(PreciseDuration(aaaStart));
@@ -65,3 +80,4 @@ function UpdateCounters() {
 
 setInterval(UpdateCounters, 1000);
 UpdateCounters();
+window.addEventListener('languageChanged', UpdateCounters);

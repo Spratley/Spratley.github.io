@@ -16,7 +16,7 @@
           <a href="index.html"><img src="/Images/Spratley_Logo_Cropped.webp" alt="Spratley Games"></a>
         </li>
         <li>
-          <h1>Spratley</h1>
+          <h1 lang-key="title"></h1>
           <div class="translation">
             <span class="sizer">ゲームクリエイター・プログラマー</span>
             <span class="jp">ゲームクリエイター・プログラマー</span>
@@ -125,9 +125,18 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
+  <div class="language-switcher-container">
+    <div id="language-menu" class="language-menu">
+      <button class="active-language" data-lang="en" onclick="SetLanguage('en')">English</button>
+      <button data-lang="ja" onclick="SetLanguage('ja')">日本語</button>
     </div>
 
+    <div class="language-button" id="language-toggle">
+      <img src="/Images/language.svg" alt="Language Toggle">
+    </div>
   </div>
 
   <footer class="main-footer">
@@ -136,6 +145,7 @@
   </footer>
 
   <!-- Post-document Scripts -->
+  <script src="/Scripts/Translation.js"></script>
   <script src="/Scripts/DateCalculator.js"></script>
 
   <!-- Shake Unannounced Game Card Script -->
@@ -147,6 +157,6 @@
       }, 300);
     }
   </script>
-
 </body>
+
 </html>

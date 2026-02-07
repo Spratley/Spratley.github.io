@@ -107,6 +107,93 @@ ul { list-style-type: none; }
   box-shadow: 20px 20px 0px rgba(0,0,0,0.2), -5px 5px 20px rgba(0,0,0,0.4); 
 }
 
+/* Language Toggle */
+.language-switcher-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.language-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--spratley-bg-black);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  min-width: 120px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-speed) ease, 
+              transform var(--transition-speed) ease, 
+              visibility 0s linear var(--transition-speed);
+
+  pointer-events: none;
+}
+
+.language-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.language-menu button {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition-speed) ease;
+  font-family: "Kiwi Maru", serif;
+}
+
+.language-menu button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-menu button.active-language {
+  color: var(--spratley-pop-red);
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.language-menu button.active-language::before {
+  content: "•";
+  margin-right: 8px;
+  color: var(--spratley-pop-red);
+}
+
+.language-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--spratley-bg-black);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.language-button:hover {
+  transform: scale(1.1);
+  background-color: var(--spratley-pop-red);
+}
+
+.language-button img {
+  width: 28px;
+  height: auto;
+}
+
 /* Footer */
 .main-footer { background-color: var(--spratley-bg-black); color: white; text-align: center; padding-bottom: 20px; }
 

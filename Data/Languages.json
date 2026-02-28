@@ -1,22 +1,30 @@
 {
     "en": {
-        "title": "Spratley",
+        "header.title": "Spratley",
 
         "years": "YEAR",
         "months": "MONTH",
         "days": "DAY",
         "hours": "HOUR",
         "minutes": "MINUTE",
-        "seconds": "SECOND"
+        "seconds": "SECOND",
+
+        "game.title.farcry6": "FAR CRY 6",
+        "game.title.farcry6_dlc": "FAR CRY 6:<br>LOST BETWEEN WORLDS",
+        "game.title.unannounced": "UNANNOUNCED AAA PROJECT"
     },
     "ja": {
-        "title": "スプラトリー",
+        "header.title": "スプラトリー",
 
         "years": "年",
         "months": "月",
         "days": "日",
         "hours": "時間",
         "minutes": "分",
-        "seconds": "秒"
+        "seconds": "秒",
+
+        "game.title.farcry6": "ファークライ6",
+        "game.title.farcry6_dlc": "ファークライ6: 狭間の世界",
+        "game.title.unannounced": "未発表AAAプロジェクト"
     }
 }

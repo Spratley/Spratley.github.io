@@ -9,8 +9,14 @@
         "minutes": "MINUTE",
         "seconds": "SECOND",
 
+        "job.title.aiprog": "AI PROGRAMMER - ",
+
         "game.title.farcry6": "FAR CRY 6",
+        "game.blurb.farcry6": "Joined as an intern in 2020 and started full-time 2021. Various polish and bugfixing work for the main campaign. Feature owner of the <b>Kukly</b> enemies for the <i>Stranger Things</i> crossover.",
+
         "game.title.farcry6_dlc": "FAR CRY 6:<br>LOST BETWEEN WORLDS",
+        "game.blurb.farcry6_dlc": "Feature owner for the new <b>Crystal Shardface</b> enemies and <b>FAI's</b> hub world appearance. Facilitated team meetings to iterate on new features for enemy behavior and non-human dialogue sequences.",
+
         "game.title.unannounced": "UNANNOUNCED AAA PROJECT"
     },
     "ja": {
@@ -22,9 +28,15 @@
         "hours": "時間",
         "minutes": "分",
         "seconds": "秒",
+        
+        "job.title.aiprog": "AI プログラマー ・",
 
         "game.title.farcry6": "ファークライ6",
+        "game.blurb.farcry6": "Joined as an intern in 2020 and started full-time 2021. Various polish and bugfixing work for the main campaign. Feature owner of the <b>ククリ</b> enemies for the <i>ストレンジャー・シングス</i> crossover.",
+
         "game.title.farcry6_dlc": "ファークライ6: 狭間の世界",
+        "game.blurb.farcry6_dlc": "Feature owner for the new <b>クリスタル・シャードフェイス</b> enemies and <b>フェイ</b>の hub world appearance. Facilitated team meetings to iterate on new features for enemy behavior and non-human dialogue sequences.",
+
         "game.title.unannounced": "未発表AAAプロジェクト"
     }
 }

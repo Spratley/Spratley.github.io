@@ -53,9 +53,12 @@ async function LoadLanguages() {
         
         if (!savedLanguage)
         {
-            const browserLanguage = navigator.language || navigator.userLanguage;
-            savedLanguage = browserLanguage.startsWith('ja') ? 'ja' : 'en';
+            // const browserLanguage = navigator.language || navigator.userLanguage;
+            // savedLanguage = browserLanguage.startsWith('ja') ? 'ja' : 'en';
 
+            // Default to English if no preference is found,
+            // since my Japanese translations aren't totally finished
+            savedLanguage = 'en';
             console.log(`No saved language preference found. Defaulting to browser language: ${savedLanguage}`);
         }
         

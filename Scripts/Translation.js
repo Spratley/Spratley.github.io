@@ -18,6 +18,17 @@ document.addEventListener("click", (e) => {
 });
 
 function SetLanguage(language) {
+
+    let hasBeenWarnedAboutJapanese = localStorage.getItem("hasBeenWarnedAboutJapanese");
+    if (language == "ja" && !hasBeenWarnedAboutJapanese)
+    {
+        if (!confirm("Note: The Japanese translations are still a work in progress, so some text may be missing or incomplete."))
+        {
+            return;
+        }
+        localStorage.setItem("hasBeenWarnedAboutJapanese", "true");
+    }
+
     localStorage.setItem("preferredLanguage", language);
     document.documentElement.lang = language;
 

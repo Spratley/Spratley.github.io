@@ -56,11 +56,13 @@ ul { list-style-type: none; }
 .sine-wave { width: 100%; height: 8px; animation: scroll-horizontal 4s linear infinite; }
 .sine-wave.is-dark { background: url('/Images/Sine_Dark.webp'); }
 .sine-wave.is-teal { background: url('/Images/Sine_Teal.webp'); }
-.sine-wave.is-red { background: url('/Images/Sine_Red.webp'); } 
+.sine-wave.is-red { background: url('/Images/Sine_Red.webp'); }
+.sine-wave.is-yellow { background: url('/Images/Sine_Yellow.webp'); }
 
 .section { width: 100%; position: relative; }
 .section.is-teal { background: linear-gradient(to bottom, #5ee2e2, var(--spratley-bg-light)); }
 .section.is-red { background: linear-gradient(to bottom, #ed544b, var(--spratley-pop-red)); color: white; text-align: center; }
+.section.is-yellow { background: linear-gradient(to bottom, #f9ca24, var(--spratley-pop-yellow)); color: var(--spratley-bg-black); text-align: center; }
 
 .section-body { max-width: 1000px; padding: 30px 20px 45px; font-size: 25px; font-weight: 500; color: black;}
 .section-body h2 { text-align: center; margin: 0 0 15px;}

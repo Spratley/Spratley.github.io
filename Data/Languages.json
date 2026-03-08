@@ -17,7 +17,9 @@
         "game.title.farcry6_dlc": "FAR CRY 6:<br>LOST BETWEEN WORLDS",
         "game.blurb.farcry6_dlc": "Feature owner for the new <b>Crystal Shardface</b> enemies and <b>FAI's</b> hub world appearance. Facilitated team meetings to iterate on new features for enemy behavior and non-human dialogue sequences.",
 
-        "game.title.unannounced": "UNANNOUNCED AAA PROJECT"
+        "game.title.unannounced": "UNANNOUNCED AAA PROJECT",
+
+        "aboutme.intro": "I'm Jacob Pratley, I make games!"
     },
     "ja": {
         "header.title": "スプラトリー",
@@ -37,6 +39,8 @@
         "game.title.farcry6_dlc": "ファークライ6: 狭間の世界",
         "game.blurb.farcry6_dlc": "Feature owner for the new <b>クリスタル・シャードフェイス</b> enemies and <b>フェイ</b>の hub world appearance. Facilitated team meetings to iterate on new features for enemy behavior and non-human dialogue sequences.",
 
-        "game.title.unannounced": "未発表AAAプロジェクト"
+        "game.title.unannounced": "未発表AAAプロジェクト",
+
+        "aboutme.intro": "私はプラトリー・ジェイこブ、ゲームを作ります!"
     }
 }

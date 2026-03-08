@@ -1,32 +1,44 @@
 // DateCalculator.js
 
+function GetYearsSince(date) {
+  return PreciseDuration(date).years;
+}
+
 function PreciseDuration(startDate) {
   const now = new Date();
-  let delta = now - startDate; // milliseconds
 
-  const msInSecond = 1000;
-  const msInMinute = msInSecond * 60;
-  const msInHour = msInMinute * 60;
-  const msInDay = msInHour * 24;
-  const msInYear = msInDay * 365.25; // average including leap years
-  const msInMonth = msInYear / 12;
+  // Get pure date differences, negatives are allowed for now
+  let years = now.getFullYear() - startDate.getFullYear();
+  let months = now.getMonth() - startDate.getMonth();
+  let days = now.getDate() - startDate.getDate();
+  let hours = now.getHours() - startDate.getHours();
+  let minutes = now.getMinutes() - startDate.getMinutes();
+  let seconds = now.getSeconds() - startDate.getSeconds();
 
-  const years = Math.floor(delta / msInYear);
-  delta -= years * msInYear;
-
-  const months = Math.floor(delta / msInMonth);
-  delta -= months * msInMonth;
-
-  const days = Math.floor(delta / msInDay);
-  delta -= days * msInDay;
-
-  const hours = Math.floor(delta / msInHour);
-  delta -= hours * msInHour;
-
-  const minutes = Math.floor(delta / msInMinute);
-  delta -= minutes * msInMinute;
-
-  const seconds = Math.floor(delta / msInSecond);
+  // Resolve negatives in reverse order
+  if (seconds < 0) {
+    minutes -= 1;
+    seconds += 60;
+  }
+  if (minutes < 0) {
+    hours -= 1;
+    minutes += 60;
+  }
+  if (hours < 0) {
+    days -= 1;
+    hours += 24;
+  }
+  if (days < 0) {
+    // Days need to be relative to the number of days in the previous month
+    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += prevMonth.getDate();
+    months--;
+  }
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  // Years doesn't need to be resolved, it can only be negative if startDate is in the future
 
   return { years, months, days, hours, minutes, seconds };
 }
@@ -53,7 +65,7 @@ function FormatDuration(dur) {
     { val: dur.seconds, label: 'seconds' }
   ];
 
- return units.map(u => `
+  return units.map(u => `
     <div class="time-block">
       <div class="val">${u.val}</div>
       <div class="lab">${GetUnitLabel(u.val, u.label, language)}</div>
@@ -78,6 +90,13 @@ function UpdateCounters() {
   document.getElementById('aaa-dev-years').innerHTML = FormatDuration(PreciseDuration(aaaStart));
 }
 
+function SetStaticDateCounters() {
+  document.querySelectorAll('#aaa-years-experience-count').forEach(element => {
+    element.textContent = GetYearsSince(aaaStart);
+  });
+}
+
+SetStaticDateCounters();
 setInterval(UpdateCounters, 1000);
 UpdateCounters();
 window.addEventListener('languageChanged', UpdateCounters);

@@ -19,6 +19,8 @@
 
         "game.title.unannounced": "UNANNOUNCED AAA PROJECT",
 
+        "aboutme.intro": "I'm Jacob Pratley, I make games!",
+        "aboutme.mygoal": "My goal is to always find the fun at the core of a concept."
     },
     "ja": {
         "header.title": "スプラトリー",
@@ -40,6 +42,7 @@
 
         "game.title.unannounced": "未発表AAAプロジェクト",
 
-        "aboutme.intro": "プラトリー・ジェイコブです．ゲームを作ります!"
+        "aboutme.intro": "プラトリー・ジェイコブです．ゲームを作ります!",
+        "aboutme.mygoal": "目的はコンセプトの核心に面白さをいつもみつけることです。"
     }
 }

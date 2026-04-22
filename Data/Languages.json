@@ -1,6 +1,7 @@
 {
     "en": {
         "header.title": "Spratley",
+        "header.title.blog": "Spratley's Blog",
 
         "years": "YEAR",
         "months": "MONTH",
@@ -24,6 +25,7 @@
     },
     "ja": {
         "header.title": "スプラトリー",
+        "header.title.blog": "スプラトリーのブログ",
 
         "years": "年",
         "months": "月",

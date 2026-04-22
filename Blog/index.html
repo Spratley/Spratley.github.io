@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spratley Games</title>
+  <link rel="icon" type="image/x-icon" href="/Images/Favicon.ico">
+  <link rel="preload" href="/Fonts/KiwiMaru-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/Images/Spratley_Logo_Cropped.webp" as="image">
+  <link rel="stylesheet" href="/Style/main.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container header-flex">
+      <ul class="spratley-brand">
+        <li class="spratley-logo">
+          <a href="/WebGame/"><img src="/Images/Spratley_Logo_Cropped.webp" alt="Spratley Games"></a>
+        </li>
+        <li>
+          <h1 lang-key="header.title.blog">Spratley's Blog</h1>
+          <div class="translation">
+            <span class="sizer">ゲームクリエイター・プログラマー</span>
+            <span class="jp">ゲームクリエイター・プログラマー</span>
+            <span class="en">Game Creator & Programmer</span>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="header-social">
+        <li class="social-icon">
+          <a href="https://spratley.itch.io/" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_Itch.webp" alt="Check out my games at spratley.itch.io!">
+          </a>
+          <p>Games</p>
+        </li>
+        <li class="social-icon">
+          <a href="https://github.com/Spratley" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_Github.png" alt="My Github for code samples and projects">
+          </a>
+          <p>Code</p>
+        </li>
+        <li class="social-icon">
+          <a href="https://ca.linkedin.com/in/jacob-pratley-1506a3202" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_Linkedin.webp" alt="My LinkedIn">
+          </a>
+          <p>LinkedIn</p>
+        </li>
+        <li class="social-icon">
+          <a href="https://www.youtube.com/@SpratleyGames" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_YouTube.webp" alt="My YouTube Channel">
+          </a>
+          <p>Videos</p>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="section is-teal">
+      <div class="sine-wave is-dark"></div>
+      <div class="container section-body">
+        <p>Blog posts TBD...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="language-switcher-container">
+    <div id="language-menu" class="language-menu">
+      <button class="active-language" data-lang="en" onclick="SetLanguage('en')">English</button>
+      <button data-lang="ja" onclick="SetLanguage('ja')">日本語</button>
+    </div>
+
+    <div class="language-button" id="language-toggle">
+      <img src="/Images/language.svg" alt="Language Toggle">
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="sine-wave is-teal"></div>
+    <p><br>© 2026 Spratley Games. All rights reserved.</p>
+  </footer>
+
+  <!-- Post-document Scripts -->
+  <script src="/Scripts/Translation.js"></script>
+  <script src="/Scripts/DateCalculator.js"></script>
+</body>
+
+</html>

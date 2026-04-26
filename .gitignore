@@ -6,3 +6,6 @@ GitIgnore_*
 
 # Non-webfont font files
 *.ttf
+
+# VSCode locals
+*.vscode

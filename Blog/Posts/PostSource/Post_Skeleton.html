@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spratley's Blog</title>
+  <title></title>
   <link rel="icon" type="image/x-icon" href="/Images/Favicon.ico">
   <link rel="preload" href="/Fonts/KiwiMaru-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/Images/Spratley_Logo_Cropped.webp" as="image">
@@ -67,8 +67,11 @@
   <div class="content">
     <div class="section is-teal">
       <div class="sine-wave is-dark"></div>
-      <div class="container blog-header"><h1 id="blog-header">Blog Posts</h1></div>
-      <div class="container section-body" id="posts-container"></div>
+      <div class="container section-body">
+        <a href="../"><b><- Back to All Posts</b></a>
+        {{content}}
+        <a href="../"><b><- Back to All Posts</b></a>
+      </div>
     </div>
   </div>
 
@@ -90,7 +93,6 @@
 
   <!-- Post-document Scripts -->
   <script src="/Scripts/Translation.js"></script>
-  <script src="Blogic.js"></script>
 </body>
 
 </html>

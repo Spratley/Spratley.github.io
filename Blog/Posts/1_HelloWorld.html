@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <link rel="icon" type="image/x-icon" href="/Images/Favicon.ico">
+  <link rel="preload" href="/Fonts/KiwiMaru-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/Images/Spratley_Logo_Cropped.webp" as="image">
+  <link rel="stylesheet" href="/Style/main.css">
+  <link rel="stylesheet" href="/Style/blog.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container header-flex">
+      <ul class="spratley-brand">
+        <li class="spratley-logo">
+          <a href="/WebGame/"><img src="/Images/Spratley_Logo_Cropped.webp" alt="Spratley Games"></a>
+        </li>
+        <li>
+          <h1 lang-key="header.title.blog">Spratley's Blog</h1>
+          <div class="translation">
+            <span class="sizer">ゲームクリエイター・プログラマー</span>
+            <span class="jp">ゲームクリエイター・プログラマー</span>
+            <span class="en">Game Creator & Programmer</span>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="header-social">
+        <li class="social-icon">
+          <a href="/">
+            <img src="/Images/Icon_Home.png" alt="Go home!">
+          </a>
+          <p>Home</p>
+        </li>
+        <li class="social-icon">
+          <a href="https://spratley.itch.io/" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_Itch.webp" alt="Check out my games at spratley.itch.io!">
+          </a>
+          <p>Games</p>
+        </li>
+        <li class="social-icon">
+          <a href="https://github.com/Spratley" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_Github.png" alt="My Github for code samples and projects">
+          </a>
+          <p>Code</p>
+        </li>
+        <li class="social-icon">
+          <a href="https://ca.linkedin.com/in/jacob-pratley-1506a3202" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_Linkedin.webp" alt="My LinkedIn">
+          </a>
+          <p>LinkedIn</p>
+        </li>
+        <li class="social-icon">
+          <a href="https://www.youtube.com/@SpratleyGames" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/SocialIcon_YouTube.webp" alt="My YouTube Channel">
+          </a>
+          <p>Videos</p>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="section is-teal">
+      <div class="sine-wave is-dark"></div>
+      <div class="container section-body">
+        <a href="../"><b><- Back to All Posts</b></a>
+        <h1>Hello World</h1>
+<p>2026年04月25日</p>
+<p>Welcome to my blog! I know that's a cliché way to start off your first blog post, but I do mean it. If you're here for something C++, just let me get a bit of personal stuff out of the way first (I promise it's waiting below!).  </p>
+<p>I've been looking for a creative outlet that involved my technical skills, and over the past few years I've juggled a few different options. I started trying to make YouTube videos, and even though I'm VERY proud of how that first one turned out, I wasn't a fan of how I felt I had to change who I was to appeal to the <em>algorithm</em> and be seen. There was too much pressure to be a <em>Mr. Beast-ified</em> over-the-top personality, and that's just not who I am. Not only that, but making videos requires a whole lot of animation work, and not that much programming. While I do enjoy animation from time-to-time, it didn't scratch the game-creation itch I needed. Plus, it took me several months to put together just the one video! At that rate, running a channel seemed unsustainable, and more like a side-hustle than a creative outlet.  </p>
+<p>My next thought was to get back on the itch.io saddle and make more games to upload to my page. However, this all started around the same time Unity's licensing scandal went down, and even though I don't monetize my personal projects for a handful of reasons, I didn't want to touch that with a 10 foot pole. The laptop I use as my main development battle-station is also growing old. I got it at the start of my 3rd year of University, which was back in 2019, so it's pushing on 7 years old at this point! The battery won't hold a charge, if I unplug it the whole laptop shuts down, and the processor is getting pretty slow. Opening Unity to work on a personal project had started to become more of a time sink than I would have saved by using a commercial engine in the first place! I decided to move on to greener pastures. Unity had been my engine of choice since Highschool, and so saying goodbye was bittersweet. On one hand, moving onto something more focused on C++ is always going to be better for my own practice, but on the other, part of me will miss how messy C# would let you get away with being.  </p>
+<p>Since Unity wasn't an option, and I wasn't in the mood to learn GDScript to work with Godot, I decided it was time to brush off my custom engine skills I had learned in University and see if I could get an OpenGL based renderer going one more time. My first attempt went well, and I ended up with a 2D sprite of a character walking around the screen. Eventually I came up with an idea based around mixing Riichi Mahjong (which is an obsession of mine that I'd recently discovered), and an RPG, so I set out to make a game- Until I realized that nobody would want to play an RPG where a single turn is an entire game of Riichi. (Well, maybe not <em>nobody</em> but it would be <em>extremely</em> niche to say the least). I set aside that project, and instead decided to refocus on making a robust game engine framework while I brewed up the game I'd make using it. I gave my engine a name that pays homage to the Riichi roots that started it. Maybe one day I'll circle back to that idea and find a way to get the best of both worlds, but for now it lives on through my engine, <strong>YakuEn</strong>.</p>
+<p>If making games for my itch.io page has taught me one thing though, it's that modern gamers won't download something off of itch.io even if it would save the world. The sheer difference in player count between WebGL builds and native applications that I've made is staggering. If I wanted to make something for my page, it would have to be playable on the web. I knew that Unity was a C++ application under the hood, and so I knew there HAD to be a way to make it work. I did a bit of research, and discovered <em>Emscripten</em>. It's a tool-chain you can use when compiling a C++ application (Especially one that uses OpenGL) to target Web Assembly (WASM) and WebGL, and it's been shockingly simple to work with! Thus began my ongoing journey to make my own web-based game, entirely from scratch.  </p>
+<p>Where does this all fit into my need for a creative outlet? Why did I have to write all that, and more importantly, why did YOU have to read it? Well, it's because this blog here is part of that journey! It can get lonely when I'm deep in the trenches of YakuEn, and I wanted somewhere nice and low-stakes where I could post updates. I realized I've got a website, so it mustn't be TOO hard to get a blog running for it, right? That brings us to today! I've just finished my markdown-to-blog-page translator, which is going to streamline the process of writing and uploading these posts. My goal is to post something at least every week, but I have no idea how long I'll be able to keep that going!</p>
+<p>You can always see the most up-to-date release build of my YakuEn WebGL game by clicking the <em>Spratley Heart</em> logo at the top of my page! As of writing, it's just an ultra simple renderer that loads an .obj file of my mascot and renders him to the screen. You can move him around with the left stick of a connected controller, or W and S on the keyboard! I'm still working hard away at that though, so expect it to change soon! I'm also planning on writing some posts about creating a WASM build of a C++ application, so stay tuned for that!  </p>
+<p>Now that we've got that out of the way, on to the tech!</p>
+<h2><em>const</em> Correctness</h2>
+<p>I figured if I was going to run a tech blog, it would be weird to make my first post without at least a fun C++ aside! If you're reading this, you're probably into programming and C++ (That, or you're one of my friends I've sent a link to). In both cases (Since none of my friends can stop me from infodumping about cool C++ stuff), you should be familiar with the <em>const</em> keyword. Just in case you're not though, here's a quick recap.  </p>
+<p><em>const</em> is one of many keywords in the C++ standard, which is just a fancy way of saying that it's a special word that compilers have a set of rules to follow when they encounter it. <em>const</em> is a way of telling the compiler that whatever object being declared is <em>immutable</em>, or in more plain terms, can't be changed. </p>
+<pre class="demo-code"><code><span class="hc-keyword">const</span> <span class="hc-type">int</span> <span class="hc-variable">a</span> = <span class="hc-number">3</span>; <span class="hc-comment">// The value of a can't be changed past here!</span>
+<span class="hc-variable">a</span> = <span class="hc-number">2</span>; <span class="hc-comment">// Error!</span>
+</code></pre>
+<p>Technically, that immutability just a facade. The underlying memory address that the object exists at isn't itself protected in any way, <em>const</em> just alerts the compiler (And anyone reading your code) that you don't intend to change the value contained in the object. Your compiler can and will hold you to your word, and will throw an error any time you attempt to modify the object, or call any non-const member functions on it. There's ways to get around <em>const</em>, but a good rule of thumb is that if you have to use them, you probably need to re-think your code. Either that, or you're a C++ wizard, and I shouldn't question you, all tools have their places after all. Just remember that when you play with const_cast, you're entering a 1 on 1 with your compiler! Use it wrong, and you might find yourself on the other end of a read-only optimization gone wrong!</p>
+<pre class="demo-code"><code><span class="hc-keyword">const</span> <span class="hc-type">int</span> <span class="hc-variable">a</span> = <span class="hc-number">3</span>; <span class="hc-comment">// The value of a can't be changed past here!</span>
+<span class="hc-keyword">const_cast</span>&lt;<span class="hc-type">int</span>&amp;&gt;(<span class="hc-variable">a</span>) = <span class="hc-number">2</span>; <span class="hc-comment">// Or can it? (Note: This is undefined behavior, please don't do it!)</span>
+</code></pre>
+<p>Now let's get into why I'm bringing up <em>const</em> at all! If you're a programmer, you've probably come across code where someone has put the <em>const</em> directly to the <em>right</em> of the type they're declaring, instead of the left where most people intuitively expect it to be. We call this <em>East const</em>.</p>
+<pre class="demo-code"><code><span class="hc-keyword">const</span> <span class="hc-type">int</span> <span class="hc-variable">a</span>; <span class="hc-comment">// West const, lost of people's preference</span>
+<span class="hc-type">int</span> <span class="hc-keyword">const</span> <span class="hc-variable">b</span>; <span class="hc-comment">// East const</span>
+</code></pre>
+<p>If you haven't heard of <em>East const</em> before, then your immediate reaction is potentially one of shock or disgust. You may be asking yourself why on earth the C++ compiler is so flexible for type qualifiers? I know I was shocked when I first learned about it. I expected the compiler to enforce the qualifier to be to the left of the type, but as it turns out, as a remnant of it's ancestry and backwards-compatibility with C, the compiler actually doesn't care about order for your type qualifiers or storage type qualifiers at all! Although there is a "canon" order that you should follow, you can <em>technically</em> put them wherever you want, as long as they're all together uninterrupted.</p>
+<pre class="demo-code"><code><span class="hc-keyword">const</span> <span class="hc-type">int</span> <span class="hc-keyword">static</span> <span class="hc-keyword">unsigned</span> <span class="hc-variable">a</span> = <span class="hc-number">0</span>; <span class="hc-comment">// Legal C++!?!?</span>
+</code></pre>
+<p>This flexibility in the layout of your keywords when declaring a type is what led to the great ongoing war between the kingdom of the <em>East const</em> and the empire of the <em>West const</em>. Here today, I would like to announce that I am firmly a member of the <em>East const</em> force, and it's a hill I'll be dying on. My first introduction to placing const to the right of the type was actually during my internship. My team had a tech-lead who was an avid <em>East const</em>-er, and so it was ingrained in me that when writing professional grade code I should keep my const to the right. Although I will admit it was a jarring shift at first, it did quickly grow on me. Let me give you my reasons I believe in <em>East const</em> and let you pick your side.</p>
+<h2>Read Right to Left?</h2>
+<p>Although in English we read left to right, for C++ names it makes more sense to read them from right to left, specifically when we're dealing with pointers. For this example, I find it easier to understand if we pretend that we have to manually parse a type one unit at a time like a computer. I know that when you're really working with code, all of this happens at a glance, but just roll with me on this one. We don't get a say on which side the pointer specifier is relative to the type, it's always going to sit to the right side. If we're reading left to right, coming across a pointer specifier makes you have to totally re-think your understanding of the type that's being declared! You're no longer looking at an object sitting in memory right there, you're looking at an address that <em>points</em> to an object that has the type being declared.  </p>
+<p>Switching up our read-direction from right to left alleviates that mental load. Since the pointer specifier is the first symbol we encounter, we know right off the bat that the type we're dealing with is actually being stored somewhere else. If you keep reading this same way, you'll notice that <em>West const</em> produces the same hiccup that we were trying to avoid before!</p>
+<pre class="demo-code"><code><span class="hc-keyword">const</span> <span class="hc-type">int</span> * <span class="hc-variable">ptrA</span>; <span class="hc-comment">// Pointer to an int- Wait no, pointer to a CONSTANT int..</span>
+<span class="hc-type">int</span> <span class="hc-keyword">const</span>* <span class="hc-variable">ptrB</span>; <span class="hc-comment">// Pointer to a constant int :)</span>
+
+<span class="hc-keyword">const</span> <span class="hc-type">int</span>* <span class="hc-keyword">const</span> <span class="hc-variable">ptrC</span>; <span class="hc-comment">// Constant pointer to an int- No a constant int, that is also constant?</span>
+<span class="hc-type">int</span> <span class="hc-keyword">const</span>* <span class="hc-keyword">const</span> <span class="hc-variable">ptrD</span>; <span class="hc-comment">// Constant pointer to a constant int :)</span>
+</code></pre>
+<p>Keeping your const firmly to the right of the type allows for a nice and seamless reading of the type, and all its qualifiers in one single pass.</p>
+<h2>Stacked at a Glance</h2>
+<p>When creating a class, we'll often group our data all together. <em>West const</em> can make those groups have sudden shifts in the horizontal placement of the type name.</p>
+<pre class="demo-code"><code><span class="hc-comment">// West const</span>
+<span class="hc-type">int</span> <span class="hc-variable">a</span>;
+<span class="hc-type">int</span> <span class="hc-variable">b</span>;
+<span class="hc-keyword">const</span> <span class="hc-type">int</span> <span class="hc-variable">c</span>;
+<span class="hc-type">int</span>* <span class="hc-variable">d</span>;
+<span class="hc-keyword">const</span> <span class="hc-type">uint</span> <span class="hc-variable">e</span>;
+<span class="hc-type">int</span> <span class="hc-variable">f</span>;
+
+<span class="hc-comment">// East const</span>
+<span class="hc-type">int</span> <span class="hc-variable">a</span>;
+<span class="hc-type">int</span> <span class="hc-variable">b</span>;
+<span class="hc-type">int</span> <span class="hc-keyword">const</span> <span class="hc-variable">c</span>;
+<span class="hc-type">int</span>* <span class="hc-variable">d</span>;
+<span class="hc-type">uint</span> <span class="hc-keyword">const</span> <span class="hc-variable">e</span>; <span class="hc-comment">// Did you see this wasn't an int before?</span>
+<span class="hc-type">int</span> <span class="hc-variable">f</span>;
+</code></pre>
+<p>Notice how the <em>East const</em> group is easier on the eyes at a glance? By keeping the qualifier to the right, we've reserved the beginning of the column for the type itself. It's much easier to scan one by one and pick out differences too! Let's say we had just updated the class these data members were part of, from storing a uint to an int. Just by using <em>West const</em>, it's easier to miss a member that we intended to change!</p>
+<h2>It's Consistent</h2>
+<p>My last point and arguably weakest point is that <em>East const</em> is consistent with the <em>const</em> keyword's other main use, constant member functions. When writing a member function's signature, you have the option to include <em>const</em> at the end, as a way to promise to the compiler that running the function will not alter the state of the object. Wouldn't you know it, the only place to put that <em>const</em> is at the end of the signature!</p>
+<pre class="demo-code"><code><span class="hc-type">void</span> <span class="hc-function">DoStuff</span>() <span class="hc-keyword">const</span>; <span class="hc-comment">// East const is the only option!</span>
+</code></pre>
+<p>Keeping an <em>East const</em> standard in your codebase is the only way to keep it consistent across all your uses.  </p>
+<h2>That's All for Now</h2>
+<p>Thanks for reading this far, I really do appreciate it. Like I said, my goal is to write at least one of these every week, so if I succeed, I'll be seeing you next time!</p>
+<p><a class="tags" href="../index.html?tag=Meta"><code id="tag">Meta</code></a> <a class="tags" href="../index.html?tag=const"><code id="tag">const</code></a></p>
+        <a href="../"><b><- Back to All Posts</b></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="language-switcher-container">
+    <div id="language-menu" class="language-menu">
+      <button class="active-language" data-lang="en" onclick="SetLanguage('en')">English</button>
+      <button data-lang="ja" onclick="SetLanguage('ja')">日本語</button>
+    </div>
+
+    <div class="language-button" id="language-toggle">
+      <img src="/Images/language.svg" alt="Language Toggle">
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="sine-wave is-teal"></div>
+    <p><br>© 2026 Spratley Games. All rights reserved.</p>
+  </footer>
+
+  <!-- Post-document Scripts -->
+  <script src="/Scripts/Translation.js"></script>
+</body>
+
+</html>

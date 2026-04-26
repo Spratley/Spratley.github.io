@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Kiwi Maru';
+  src: url('https://spratley.github.io/Fonts/KiwiMaru-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Site Palette */
+  --spratley-bg-black: #0D1321;
+  --spratley-bg-light: #24c4c4;
+  --spratley-dark-teal: #0a4f51;
+  --spratley-pop-red: #EB362D;
+  --spratley-pop-yellow: #E9C46A;
+
+  /* Giscus Core Mapping */
+  --color-canvas-default: var(--spratley-bg-black);
+  --color-canvas-subtle: #161f35;
+  --color-bg-overlay: var(--spratley-bg-black);
+  --color-fg-default: #ffffff;
+  --color-fg-muted: var(--spratley-bg-light);
+  --color-accent-fg: var(--spratley-pop-yellow);
+  
+  /* Borders & Info */
+  --color-border-default: var(--spratley-bg-light);
+  --color-box-border-info: var(--color-border-default);
+  
+  /* Buttons */
+  --color-btn-bg: rgba(255, 255, 255, 0.1);
+  --color-btn-text: #ffffff;
+  --color-btn-primary-bg: var(--spratley-pop-red);
+  --color-btn-primary-text: #ffffff;
+}
+
+* {
+  font-family: 'Kiwi Maru', serif !important;
+}
+
+.gsc-main {
+  padding: 20px;
+}
+
+.gsc-comment-box, 
+.gsc-comment {
+  background-color: var(--spratley-bg-black) !important;
+  border-radius: 15px !important;
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.1) !important;
+}
+
+.gsc-comment-box {
+  border: 3px solid var(--spratley-bg-black) !important;
+}
+
+.gsc-comment {
+  border: 1px solid var(--color-border-default) !important;
+  margin-bottom: 20px !important;
+}
+
+.gsc-comment-box-textarea {
+  background-color: #161f35 !important;
+  color: white !important;
+  font-size: 18px !important;
+}
+
+.gsc-tab-link {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.gsc-tab-link[aria-selected="true"] {
+  background-color: var(--spratley-dark-teal) !important;
+  border-radius: 8px 8px 0 0;
+}
+
+.gsc-comment-button {
+  background-color: var(--spratley-pop-red) !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-weight: bold !important;
+  transition: transform 0.2s ease !important;
+}
+
+.gsc-reactions-menu {
+    font-size: 0.8rem !important;
+}

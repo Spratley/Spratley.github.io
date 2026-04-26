@@ -218,7 +218,7 @@ class PostGenerator:
 
 # -=-=-=-= Main =-=-=-=-
 if __name__ == "__main__":
-    generator = PostGenerator("Post_Skeleton.html")
+    generator = PostGenerator("Post_Skeleton.xml")
     
     for sbpFile in Path(".").glob("*.sbp"):
         generator.ProcessFile(sbpFile)

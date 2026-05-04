@@ -18,6 +18,12 @@ a { text-decoration: none; color: var(--spratley-pop-red);}
 
 .blog-header { max-width: 1000px; padding: 10px 30px; box-sizing: border-box; }
 
+.section-body img {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+}
+
 /* Code Blocks */
 .demo-code { background: #282c34; border-radius: 15px; overflow: hidden; width: 100%; display: grid; margin: 10px; overflow-x: auto; display: grid; scrollbar-color: #555 #1e1e1e; scrollbar-width: thin; }
 .demo-code code { display: block; padding: 15px; width: max-content; min-width: 100%; box-sizing: border-box; font-size: 0.7em; line-height: 125%; color: white; }

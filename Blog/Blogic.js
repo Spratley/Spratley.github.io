@@ -28,13 +28,26 @@ function DisplayPosts(posts)
         }
     }
 
+    // Sort posts by date, newest first
+    // Eventually this should be configurable by the user to sort by custom criteria
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Conditionally include subtitle if one is present
     posts.forEach(post => {
         const postCard = document.createElement('div');
         postCard.classList.add('post-card');
+
+        let subtitleHTML = '';
+        if (post.subtitle) {
+            subtitleHTML = `<h5>${post.subtitle}</h5>`;
+        }
+
         postCard.innerHTML = `
             <a href="Posts/${post.fileName}">
                 <img src="${post.image}" alt="${post.title}">
                 <h3>${post.title}</h3>
+                ${subtitleHTML}
+                <p>${post.date}</p>
             </a>
             `;
         postsContainer.appendChild(postCard);

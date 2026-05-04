@@ -1,0 +1,151 @@
+<Title:Casting a Net>
+<Subtitle:C++ in Your Browser - Part 1>
+<Date:2026-05-03>
+<Tags:Emscripten,YakuEn>
+
+Welcome back! If you read my last blog post, you'll know where this one is going. Targeting Web Assembly (WASM) for a C++ application is one of the latest rabbit holes I've gone down. As you may know, I have a custom game engine I work on as a pet project called **YakuEn**. Over the last little while I've added support for WASM to YakuEn through a custom build pipeline. It's been a very interesting and shockingly simple project to take on, all thanks to the open source compiler toolchain *[Emscripten](https://emscripten.org/)*. Before I get into the how though, I first have to answer why on earth I'd want to even try and do this in the first place. 
+
+## Why the Web?
+
+In both my own experience as well as snippets I've heard from others, in the world of minor indie game development it's practically a death sentence for a game to require the user to download something. I can't say for sure why, but if I had to guess I would say it's the convenience and lack of commitment that browser games inherently provide. As a player trying to choose between a browser game and a downloaded game of equal quality, would I really go through the process of downloading and running something myself or would I go for the option that's on-demand and directly on the page where I found it? There's also a sense of security that browser software provides. Your browser will run a WASM app in what is called a sandbox, effectively walling off the code and memory so that it can't have unintended or malicious side effects on the computer running it. While the browser's sandbox isn't perfect, it's significantly more risky to download and run an unfamiliar application from the internet than it is to run a game in your browser.
+
+![Stats from my itch.io page that proves my point](/Images/Blog/2_ItchStats.webp)
+
+These stats are taken directly from [my itch.io page](https://spratley.itch.io/)'s analytics for two games that I'd say are comparable in quality. As you can see, the views alone are over 10x more on the game that's playable directly in the user's browser versus one that needs to be downloaded. What's even better is the conversion rate of views to players in game has increased twofold, from around one quarter to nearly half!  
+
+Clearly, it's an easy win for any project to just make a web build instead of an executable. For commercial engines like Unity or Unreal, that's as simple as configuring a few settings when creating your final build, but in the world of custom frameworks it's never that easy. Part of the reason I started developing YakuEn in the first place was to move away from using Unity, and so I knew the convenience of making WASM/WebGL builds would be irreplaceable. I also knew that it must be possible in some way since Unity is C++ at its core, so I started researching how it was done. That's when I found..
+
+## Emscripten
+
+Like I mentioned, Emscripten is an open source compiler toolchain, designed for targeting WASM. At a high level, Emscripten provides an alternative compiler built on top of Clang that generates a WASM program, as well as JavaScript hooks that your browser can use to interface with it. From there, your browser (Or technically any WASM runtime) can launch your application or leverage any functions you've exposed. If you're running it from the browser you'll need what Emscripten refers to as a shell, which is to put simply, an HTML wrapper page that is there to call the entrypoint and provide a text or graphical output when needed. You can opt-in to the default shell, which is a basic output wrapper with a text console and a display for any graphics you've drawn. Although it also has a big Emscripten logo in the corner, so it's not ideal for a final build. Thankfully it's super straight forward to edit that shell down into a full-screen graphics output, which is what likely all you'll need if you're making a video game like me. You can even zip up and embed the output directly on an itch.io page, the same way you can with a build from Unity or Unreal!  
+
+For YakuEn, I've created three batch scripts that handle all my project build needs, *GenerateProjects.bat*, *BuildGame.bat*, and *BuildWebGame.bat*. Reading through them, it might seem like Baby's First Build System, but it works for the small scale needs of my engine. While I'd love to write step by step instructions for getting your own project setup with Emscripten, I stumbled through the development of my own pipeline, I'll still do what I can though! The best place to start is following the installation instructions on the [Emscripten website](https://emscripten.org/docs/getting_started/downloads.html), which will do a far better job of walking you through the process than I ever could.  
+
+The best recommendation I can give is to setup a basic Hello World application first, to verify that your install of Emscripten is working, and that you have the basics of building and deploying a web build nailed down. That way you don't waste any time converting the code of your project without knowing if you can even get a build to work. For testing, something to be aware of is that you can't directly run WASM applications through your browser just by navigating to the file on your disk (For security reasons). I've found success with a Visual Studio Code website live preview extension that locally hosts a web server. With it, it's as simple as launching a preview of the shell page and YakuEn is running!
+
+## Putting the GL in WebGL
+
+I'd say the hardest part of integrating Emscripten into your project is ensuring that your shaders are compatible. The team creating Emscripten has done a fantastic job of making porting an existing program as painless as possible, but WebGL has inherent limitations that can't just be hand-waved away sadly. Although *WebGPU*, the new successor to WebGL, will be addressing some of these issues, by default Emscripten leverages WebGL for your drawing needs. WebGL relies on the OpenGL Embedded Systems Shading Language, or GLSL ES for short. Embedded Systems tend to have much more strict requirements, and so GLSL ES is designed to be a more streamlined shading language and is missing some functionality that standard GLSL Core might have. It would be unwise of me to list every difference here, so it's best if you go on a case-by-case basis for your project, and substitute where needed.  
+
+The most obvious changes needed to convert a shader to work with Emscripten and WebGL is swapping the version definition from your desktop app's core GLSL, to GLSL ES version 3.0. Additionally, GLSL ES demands that all fragment shaders provide a precision qualifier, and failing to do so will result in a shader compilation error.
+
+```
+#version 330 core // Not compatible with WebGL
+// No precision qualifier?
+
+#version 300 es   // Much better!
+precision mediump float; // Or lowp/highp, depends on your needs!
+```
+
+For YakuEn my end goal is to develop a system to generate shader code at compile-time depending on the target platform, so these differences can be managed automatically. Until then though, I'm getting away by using an #ifdef in my code, and conditionally branching in the preprocessor which directory I'll be loading my shaders from, and WASM versions of each shader I have. For example, the code where I generate my shader for drawing a fullscreen quad looks like:
+
+```
+// Note: YK_WEB_ASSEMBLY is defined automatically by my build pipeline
+#if YK_WEB_ASSEMBLY
+    , m_fsqShader("Data/Shaders/ShaderCode/WASM/FSQ_WASM.vs",
+                  "Data/Shaders/ShaderCode/WASM/SolidTexture_WASM.fs")
+#else
+    , m_fsqShader("Data/Shaders/ShaderCode/FSQ.vs",
+                  "Data/Shaders/ShaderCode/SolidTexture.fs")
+#endif // YK_WEB_ASSEMBLY
+```
+
+While it's not a sustainable solution long-term, it highlights an important reason to think about what platforms you'll be targeting when starting a project like a game engine. If I was converting a legacy engine to support WASM late into its life-cycle, it would be significantly harder and more time consuming to get everything up and running than it was for YakuEn in its infancy. I'm at the point with my engine still where major architectural choices are being made that will be foundational for the project. If I need to tear out a system to replace it with one that will make it easier for the engine to deploy to both the desktop and browser, I have the luxury to do so.  
+
+As I mentioned earlier though, Emscripten has been developed in such a way that existing OpenGL code that leverages standard APIs such as SDL, GLUT, or GLFW, will likely be natively compatible. Emscripten defines its own versions of each API, following the same public interface, that re-routes the OpenGL initialization and routines to the corresponding WebGL code that will achieve the same effect. For YakuEn, this means that my graphics code just needs a similar *#if YK_WEB_ASSEMBLY* check to ensure that Emscripten's headers are being included from where they are expected (Note: Don't judge my file paths). The actual OpenGL calls themselves need no changes!
+
+```
+#if YK_WEB_ASSEMBLY
+// Emscripten specific GL headers
+#include <GLES3/gl3.h>
+#include <GLFW/glfw3.h>
+#include <emscripten.h>
+#else
+#include <YKC/Libraries/OpenGL/GLAD/include/glad/glad.h>
+#include <YKC/Libraries/OpenGL/GLFW/include/glfw3.h>
+#endif
+
+// And then later in the file...
+
+void CG_RenderModule::Render() const
+{
+    // Simplified for your viewing pleasure
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    m_shader->Use();
+
+    YK_Matrix44 transform = m_renderMatrix * g_perspective;
+    m_shader->SetMatrix44("transform", transform.GetData());
+
+    m_texture->GetGLData().Bind(0);
+    m_quadMesh->GetGLData().Bind();
+    glDrawElements(GL_TRIANGLES, 2 * 3, GL_UNSIGNED_INT, 0);
+
+    glfwSwapBuffers(m_glfwWindow);
+}
+```
+
+## Caught in a Loop-De-Loop
+
+The one major design shift that Emscripten demands on the program side though is the removal of your core loop. Most real time C++ applications have a central loop that just runs until the user indicates they want to shut down the app. For example:
+
+```
+int main()
+{
+    ConstructServices();
+
+    bool shouldClose = false;
+    while (!shouldClose)
+    {
+        // Returns true when the user exits the app
+        // Otherwise we keep looping!
+        shouldClose = RunFrame();
+    }
+    
+    ShutDownServices();
+}
+```
+
+Emscripten however, is at the mercy of the JavaScript runtime that is the central service running the entire webpage. That runtime expects all calls to the WASM to be blocking, meaning it will wait for a result before refreshing the rest of the website. If you naively run a core loop by yourself, you'll have effectively locked down your page into an infinite loop. Yes, technically your app will be running each frame, but nothing will show to the end-user since the page can never take control back and refresh the screen (It also won't be polling and sending input back to the app either)! Instead, Emscripten provides a convenient function to set a custom callback to act as a secondary per-frame entrypoint to your WASM binary that the JavaScript wrapper can call as part of its own core loop of running the page itself.
+
+The way that I decided to get around it for now with YakuEn is to leverage lambdas to extract the body of the loop from the mechanism that runs it. I'll admit it's not a perfect solution, we're wasting one precious stack frame even when optimized, and the syntax is a bit out there for what it's achieving, but it gets the job done.
+
+```
+// This is called in my Run() master function, previously where my core loop existed
+m_platformCore.LaunchCoreLoop([](void* p_context) 
+{ 
+    static_cast<YakuEngine*>(p_context)->EngineLoop(); 
+}, this);
+
+
+// On Windows, LaunchCoreLoop's body is: 
+void YKC_PlatformCore::LaunchCoreLoop(void (*p_coreLoop)(void*), void* p_contextData) const
+{
+    while (!m_displaySurface.ShouldClose())
+    {
+        p_coreLoop(p_contextData);
+    }
+}
+
+// And for WASM it's:
+void YKC_PlatformCore::LaunchCoreLoop(void (*p_coreLoop)(void*), void* p_contextData) const
+{
+    // Sets the callback for each frame to be p_coreLoop with a data pointer p_contextData
+    // The 0 indicates we want to run at the browser's FPS
+    // The 1 means we're simulating an infinite loop
+    emscripten_set_main_loop_arg(p_coreLoop, p_contextData, 0, 1);
+}
+```
+
+## But Wait, There's More!
+
+Drawing to the screen isn't the only thing Emscripten is capable of, it's an extremely versatile tool for porting C++ apps to the browser. It also has the ability to emulate an OS filesystem, so that your C++ IO file queries can remain totally unchanged in your source. All you need to do is provide the build command with an argument to specify what folders you want to bake into your output, and a corresponding virtual folder they can be accessed from by the file system (Denoted by the @ separating the two). If you bake data like this, you'll notice Emscripten generates a new .data file alongside your WASM binary and JavaScript hooks. This is where that embedded data is stored! Once that's done, and as I said, the C++ side needs absolutely no changes. It will be able to access the contents of the .data file, simply by querying the file system as usual using the virtual address given. For now, I've made my data be baked to the same directory it's living in locally, but that's just because I haven't given YakuEn's file system much love, and I throw around a lot of literal paths in my code.
+
+```
+// Loads every file in /Data/ into a virtual folder with the same directory
+--preload-file J:/Game/Data@J:/Game/Data
+```
+
+Some more topics that Emscripten has the backbone to tackle, but I personally haven't had a chance to play with yet are audio and networking. Supposedly, according to the documentation which I've linked twice now, Emscripten has an implementation of the OpenAL API for interfacing with audio, as well as a custom WebSockets API for networking. I'm super excited to give them both a shot with YakuEn, it turns out that building browser games can be easy AND fun!
+
+I hope you give it a go with your own project. Even if it's just getting some text to print to the default shell's console, it's a very rewarding and unique feeling to see a program you wrote in C++ get executed by your browser! Tune in next week for Part 2 of this topic, where I'll be detailing my learnings about how to effectively architect platform independent code, to minimize the work on both you and your API client when switching target platforms. さようなら!

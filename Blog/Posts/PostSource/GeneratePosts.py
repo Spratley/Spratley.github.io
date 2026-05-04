@@ -168,6 +168,7 @@ class PostGenerator:
         # Build Markdown Source
         mdSource = []
         if "Title" in metadata: mdSource.append(f"# {metadata['Title']}")
+        if "Subtitle" in metadata: mdSource.append(f"## {metadata['Subtitle']}")
         if "Date" in metadata: mdSource.append(metadata["Date"])
         mdSource.append(body)
         if "Tags" in metadata:
@@ -175,6 +176,9 @@ class PostGenerator:
             mdSource.append(f"\n\n{tagLine}")
 
         htmlOutput = markdown.markdown("\n\n".join(mdSource), extensions=['fenced_code'])
+
+        # Make links open in new tab
+        htmlOutput = htmlOutput.replace("<a", "<a target=\"_blank\"")
 
         # Put the date in Japanese format because I'm a weeb
         if "Date" in metadata and "-" in metadata["Date"]:
@@ -210,6 +214,7 @@ class PostGenerator:
 
         self.postsMetadata.append({
             "title": metadata.get("Title", ""),
+            "subtitle": metadata.get("Subtitle", ""),
             "date": metadata.get("Date", ""),
             "tags": [t.strip() for t in metadata.get("Tags", "").split(",")] if "Tags" in metadata else [],
             "fileName": outName,

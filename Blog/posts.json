@@ -1,12 +1,24 @@
 [
     {
         "title": "Hello World",
+        "subtitle": "And <i>const</i> Correctness",
         "date": "2026-04-25",
         "tags": [
             "Meta",
             "const"
         ],
         "fileName": "1_HelloWorld.html",
+        "image": "/Images/Unknown.webp"
+    },
+    {
+        "title": "Casting a Net",
+        "subtitle": "C++ in Your Browser - Part 1",
+        "date": "2026-05-03",
+        "tags": [
+            "Emscripten",
+            "YakuEn"
+        ],
+        "fileName": "2_Emscripten.html",
         "image": "/Images/Unknown.webp"
     }
 ]

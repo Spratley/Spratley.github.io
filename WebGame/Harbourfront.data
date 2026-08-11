@@ -7466,7 +7466,10 @@ f 834/697/4 872/696/4 883/698/4
 f 834/697/4 883/696/4 835/698/4
 f 835/697/4 883/696/4 869/698/4
 f 835/697/4 869/696/4 868/698/4
-#version 330 core
+#if GL_ES
+precision mediump float;
+#endif
+
 out vec4 FragColor;
 
 in vec2 TexCoord;
@@ -7478,21 +7481,18 @@ void main()
     FragColor = texture(sprite, TexCoord);
 	if (FragColor.a < 0.5)
 		discard;
-}#version 330 core
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoord;
+}out vec2 TexCoord;
 
-out vec2 TexCoord;
+const vec2 g_quadVerts[4] = vec2[4]( vec2(-0.5, -0.5), vec2(0.5, -0.5), vec2(-0.5, 0.5), vec2(0.5, 0.5) );
+const vec2 g_quadTexCoords[4] = vec2[4]( vec2(0.0, 0.0), vec2(1.0, 0.0), vec2(0.0, 1.0), vec2(1.0, 1.0) );
 
 uniform mat4 transform;
 
 void main()
 {
-    gl_Position = transform * vec4(aPos, 1.0);
-    TexCoord = aTexCoord;
-}#version 330 core
-
-out vec2 TexCoord;
+    gl_Position = transform * vec4(g_quadVerts[gl_VertexID], 0.0, 1.0);
+    TexCoord = g_quadTexCoords[gl_VertexID];
+}out vec2 TexCoord;
 
 const vec2 g_quadVerts[4] = vec2[4]( vec2(-1.0, -1.0), vec2(1.0, -1.0), vec2(-1.0, 1.0), vec2(1.0, 1.0) );
 const vec2 g_quadTexCoords[4] = vec2[4]( vec2(0.0, 0.0), vec2(1.0, 0.0), vec2(0.0, 1.0), vec2(1.0, 1.0) );
@@ -7501,7 +7501,9 @@ void main()
 {
     gl_Position = vec4(g_quadVerts[gl_VertexID], 0.0, 1.0);
     TexCoord = g_quadTexCoords[gl_VertexID];
-}#version 330 core
+}#if GL_ES
+precision mediump float;
+#endif
 out vec4 FragColor;
 
 in vec2 TexCoord;
@@ -7513,8 +7515,7 @@ void main()
     FragColor = texture(sprite, TexCoord);
 	if (FragColor.a < 0.5)
 		discard;
-}#version 330 core
-layout (location = 0) in vec3 aPos;
+}layout (location = 0) in vec3 aPos;
 layout (location = 1) in vec2 aTexCoord;
 
 out vec2 TexCoord;
@@ -7523,7 +7524,9 @@ void main()
 {
     gl_Position = vec4(aPos, 1.0);
     TexCoord = aTexCoord;
-}#version 330 core
+}#if GL_ES
+precision mediump float;
+#endif
 out vec4 FragColor;
 
 in vec2 TexCoord;
@@ -7535,94 +7538,7 @@ void main()
     FragColor = texture(tex, TexCoord);
 	if (FragColor.a < 0.5)
 		discard;
-	
-}#version 330 core
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoord;
-
-out vec2 TexCoord;
-
-uniform mat4 transform;
-
-void main()
-{
-    gl_Position = transform * vec4(aPos, 1.0);
-    TexCoord = aTexCoord;
-}#version 300 es
-precision mediump float;
-out vec4 FragColor;
-
-in vec2 TexCoord;
-  
-uniform sampler2D sprite;
-
-void main()
-{
-    FragColor = texture(sprite, TexCoord);
-	if (FragColor.a < 0.5)
-		discard;
-}#version 300 es
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoord;
-
-out vec2 TexCoord;
-
-uniform mat4 transform;
-
-void main()
-{
-    gl_Position = transform * vec4(aPos, 1.0);
-    TexCoord = aTexCoord;
-}#version 300 es
-
-out vec2 TexCoord;
-
-const vec2 g_quadVerts[4] = vec2[4]( vec2(-1.0, -1.0), vec2(1.0, -1.0), vec2(-1.0, 1.0), vec2(1.0, 1.0) );
-const vec2 g_quadTexCoords[4] = vec2[4]( vec2(0.0, 0.0), vec2(1.0, 0.0), vec2(0.0, 1.0), vec2(1.0, 1.0) );
-
-void main()
-{
-    gl_Position = vec4(g_quadVerts[gl_VertexID], 0.0, 1.0);
-    TexCoord = g_quadTexCoords[gl_VertexID];
-}#version 300 es
-precision mediump float;
-out vec4 FragColor;
-
-in vec2 TexCoord;
-  
-uniform sampler2D sprite;
-
-void main()
-{
-    FragColor = texture(sprite, TexCoord);
-	if (FragColor.a < 0.5)
-		discard;
-}#version 300 es
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoord;
-
-out vec2 TexCoord;
-
-void main()
-{
-    gl_Position = vec4(aPos, 1.0);
-    TexCoord = aTexCoord;
-}#version 300 es
-precision mediump float;
-out vec4 FragColor;
-
-in vec2 TexCoord;
-  
-uniform sampler2D tex;
-
-void main()
-{
-    FragColor = texture(tex, TexCoord);
-	if (FragColor.a < 0.5)
-		discard;
-	
-}#version 300 es
-layout (location = 0) in vec3 aPos;
+}layout (location = 0) in vec3 aPos;
 layout (location = 1) in vec2 aTexCoord;
 
 out vec2 TexCoord;

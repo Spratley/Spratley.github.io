@@ -1,4 +1,6 @@
-# Blender 5.1.1
+shader = "Shaders/Main.YKS"
+texture = "Textures/Prototype_Ground.png"shader = "Shaders/Main.YKS"
+texture = "Textures/HeartTest.png"# Blender 5.1.1
 # www.blender.org
 o Smile
 v -0.204529 0.330511 0.223057
@@ -7466,7 +7468,10 @@ f 834/697/4 872/696/4 883/698/4
 f 834/697/4 883/696/4 835/698/4
 f 835/697/4 883/696/4 869/698/4
 f 835/697/4 869/696/4 868/698/4
-#if GL_ES
+fragment = "Shaders/ShaderCode/2DR_Fragment.fs"
+vertex = "Shaders/ShaderCode/2DR_Vertex.vs"fragment = "Shaders/ShaderCode/SolidTexture.fs"
+vertex = "Shaders/ShaderCode/FSQ.vs"fragment = "Shaders/ShaderCode/Fragment.fs"
+vertex = "Shaders/ShaderCode/Vertex.vs"#if GL_ES
 precision mediump float;
 #endif
 

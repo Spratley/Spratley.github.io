@@ -1,5 +1,6 @@
 shader = "Shaders/Main.YKS"
 texture = "Textures/Prototype_Ground.png"shader = "Shaders/Main.YKS"
+texture = "Textures/HeartTest.png"shader = "Shaders/MainSkeletal.YKS"
 texture = "Textures/HeartTest.png"# Blender 5.1.1
 # www.blender.org
 o Smile
@@ -3782,7 +3783,28 @@ f 797/634/795 757/600/755 782/638/780
 f 788/605/786 790/614/788 804/616/802
 f 764/593/762 775/591/773 784/606/782
 f 790/614/788 792/618/790 807/615/805
-v -0.65 0.4 -1.036835
+glTF   €)  ü  JSON{"asset":{"generator":"Khronos glTF Blender I/O v5.2.40","version":"2.0"},"scene":0,"scenes":[{"name":"Scene","nodes":[5]}],"nodes":[{"name":"Bone.003","translation":[0,0.5,0]},{"children":[0],"name":"Bone.002","translation":[0,0.5,0]},{"children":[1],"name":"Bone.001","translation":[0,0.5,0]},{"children":[2],"name":"Bone"},{"mesh":0,"name":"Cube","skin":0},{"children":[4,3],"name":"Armature"}],"animations":[{"channels":[{"sampler":0,"target":{"node":3,"path":"translation"}},{"sampler":1,"target":{"node":3,"path":"rotation"}},{"sampler":2,"target":{"node":3,"path":"scale"}},{"sampler":3,"target":{"node":2,"path":"translation"}},{"sampler":4,"target":{"node":2,"path":"rotation"}},{"sampler":5,"target":{"node":2,"path":"scale"}},{"sampler":6,"target":{"node":1,"path":"translation"}},{"sampler":7,"target":{"node":1,"path":"rotation"}},{"sampler":8,"target":{"node":1,"path":"scale"}},{"sampler":9,"target":{"node":0,"path":"translation"}},{"sampler":10,"target":{"node":0,"path":"rotation"}},{"sampler":11,"target":{"node":0,"path":"scale"}}],"name":"ArmatureAction","samplers":[{"input":7,"interpolation":"STEP","output":8},{"input":7,"interpolation":"STEP","output":9},{"input":7,"interpolation":"STEP","output":10},{"input":7,"interpolation":"STEP","output":11},{"input":12,"interpolation":"LINEAR","output":13},{"input":7,"interpolation":"STEP","output":10},{"input":7,"interpolation":"STEP","output":14},{"input":12,"interpolation":"LINEAR","output":15},{"input":7,"interpolation":"STEP","output":10},{"input":7,"interpolation":"STEP","output":16},{"input":12,"interpolation":"LINEAR","output":17},{"input":7,"interpolation":"STEP","output":10}]}],"materials":[{"doubleSided":true,"name":"Material","pbrMetallicRoughness":{"baseColorFactor":[0.800000011920929,0.800000011920929,0.800000011920929,1],"metallicFactor":0,"roughnessFactor":0.5}}],"meshes":[{"name":"Cube","primitives":[{"attributes":{"POSITION":0,"NORMAL":1,"TEXCOORD_0":2,"JOINTS_0":3,"WEIGHTS_0":4},"indices":5,"material":0}]}],"skins":[{"inverseBindMatrices":6,"joints":[3,2,1,0],"name":"Armature"}],"accessors":[{"bufferView":0,"componentType":5126,"count":48,"max":[0.5,2,0.5],"min":[-0.5,0,-0.5],"type":"VEC3"},{"bufferView":1,"componentType":5126,"count":48,"type":"VEC3"},{"bufferView":2,"componentType":5126,"count":48,"type":"VEC2"},{"bufferView":3,"componentType":5121,"count":48,"type":"VEC4"},{"bufferView":4,"componentType":5126,"count":48,"type":"VEC4"},{"bufferView":5,"componentType":5123,"count":108,"type":"SCALAR"},{"bufferView":6,"componentType":5126,"count":4,"type":"MAT4"},{"bufferView":7,"componentType":5126,"count":2,"max":[2.5],"min":[0.041666666666666664],"type":"SCALAR"},{"bufferView":8,"componentType":5126,"count":2,"type":"VEC3"},{"bufferView":9,"componentType":5126,"count":2,"type":"VEC4"},{"bufferView":10,"componentType":5126,"count":2,"type":"VEC3"},{"bufferView":11,"componentType":5126,"count":2,"type":"VEC3"},{"bufferView":12,"componentType":5126,"count":60,"max":[2.5],"min":[0.041666666666666664],"type":"SCALAR"},{"bufferView":13,"componentType":5126,"count":60,"type":"VEC4"},{"bufferView":14,"componentType":5126,"count":2,"type":"VEC3"},{"bufferView":15,"componentType":5126,"count":60,"type":"VEC4"},{"bufferView":16,"componentType":5126,"count":2,"type":"VEC3"},{"bufferView":17,"componentType":5126,"count":60,"type":"VEC4"}],"bufferViews":[{"buffer":0,"byteLength":576,"byteOffset":0,"target":34962},{"buffer":0,"byteLength":576,"byteOffset":576,"target":34962},{"buffer":0,"byteLength":384,"byteOffset":1152,"target":34962},{"buffer":0,"byteLength":192,"byteOffset":1536,"target":34962},{"buffer":0,"byteLength":768,"byteOffset":1728,"target":34962},{"buffer":0,"byteLength":216,"byteOffset":2496,"target":34963},{"buffer":0,"byteLength":256,"byteOffset":2712},{"buffer":0,"byteLength":8,"byteOffset":2968},{"buffer":0,"byteLength":24,"byteOffset":2976},{"buffer":0,"byteLength":32,"byteOffset":3000},{"buffer":0,"byteLength":24,"byteOffset":3032},{"buffer":0,"byteLength":24,"byteOffset":3056},{"buffer":0,"byteLength":240,"byteOffset":3080},{"buffer":0,"byteLength":960,"byteOffset":3320},{"buffer":0,"byteLength":24,"byteOffset":4280},{"buffer":0,"byteLength":960,"byteOffset":4304},{"buffer":0,"byteLength":24,"byteOffset":5264},{"buffer":0,"byteLength":960,"byteOffset":5288}],"buffers":[{"byteLength":6248}]}   h  BIN    ?   @   ¿   ?   @   ¿   ?   @   ¿   ?       ¿   ?       ¿   ?       ¿   ?   @   ?   ?   @   ?   ?   @   ?   ?       ?   ?       ?   ?       ?   ¿   @   ¿   ¿   @   ¿   ¿   @   ¿   ¿       ¿   ¿       ¿   ¿       ¿   ¿   @   ?   ¿   @   ?   ¿   @   ?   ¿       ?   ¿       ?   ¿       ?   ?  À?   ¿   ?  À?   ¿   ?  €?   ¿   ?  €?   ¿   ?   ?   ¿   ?   ?   ¿   ¿   ?   ?   ¿   ?   ?   ¿  €?   ?   ¿  €?   ?   ¿  À?   ?   ¿  À?   ?   ?  À?   ?   ?  À?   ?   ?  €?   ?   ?  €?   ?   ?   ?   ?   ?   ?   ?   ¿  À?   ¿   ¿  À?   ¿   ¿  €?   ¿   ¿  €?   ¿   ¿   ?   ¿   ¿   ?   ¿          €¿      €?      €?                  €¿      €¿      €?                  €?      €?      €?                  €?      €¿      €?                  €¿      €?      €¿                  €¿      €¿      €¿                  €?      €?      €¿                  €?      €¿      €¿                  €¿  €?                  €¿  €?                  €¿  €?                  €?  €¿                  €?  €¿                  €?  €¿                  €?  €?                  €?  €?                  €?  €?                  €¿  €¿                  €¿  €¿                  €¿  €¿           ?   ?   ?   ?   ?   ?  À>   ?  À>   ?  À>   ?   ?  €>   ?  €>   ?  €>  À>  €>  À>  €>  À>  €>   ?  @?  `?   ?   ?  @?  À>  @?   >   ?  À>  @?   ?      `?  €>   ?  €?  À>       >  €>  À>  €?  ?   ?  ?   ?ÿÿÿ>   ?ÿÿÿ>   ?  à>   ?  à>   ?  à>      à>  €?   ?       ?  €?  ?      ?  €?  ?  €>  ?  €>ÿÿÿ>  €>ÿÿÿ>  €>  à>  €>  à>  €>  ?  @?  ?  @?ÿÿÿ>  @?ÿÿÿ>  @?  à>  @?  à>  @?                                                                                      R`P?5¶4>Wˆ<    R`P?5¶4>Wˆ<    R`P?5¶4>Wˆ<      €?              €?              €?            
+ƒT?$w(>R–¯;    
+ƒT?$w(>R–¯;    
+ƒT?$w(>R–¯;      €?              €?              €?            
+ƒT?$w(>R–¯;    
+ƒT?$w(>R–¯;    
+ƒT?$w(>R–¯;    ¢è??ïº9        ¢è??ïº9        ¢è??ïº9        R`P?5¶4>Wˆ<    R`P?5¶4>Wˆ<    R`P?5¶4>Wˆ<    |Ä?Ün:        |Ä?Ün:        |Ä?Ün:        Àù>í8à>H½š=    Àù>í8à>H½š=    ÖÕ>ˆºÕ>W1©=~Œ¨=ÖÕ>ˆºÕ>W1©=~Œ¨=(ú>—Lß>-š=    (ú>—Lß>-š=    (ú>—Lß>-š=    (ú>—Lß>-š=    ÖÕ>ˆºÕ>W1©=~Œ¨=ÖÕ>ˆºÕ>W1©=~Œ¨=Àù>í8à>H½š=    Àù>í8à>H½š=    (ú>—Lß>-š=    (ú>—Lß>-š=    ÖÕ>ˆºÕ>W1©=~Œ¨=ÖÕ>ˆºÕ>W1©=~Œ¨=Àù>í8à>H½š=    Àù>í8à>H½š=    (ú>—Lß>-š=    (ú>—Lß>-š=    ÖÕ>ˆºÕ>W1©=~Œ¨=ÖÕ>ˆºÕ>W1©=~Œ¨=Àù>í8à>H½š=    Àù>í8à>H½š=          $   $  " #   #  +   
+  
+       % *    *     .     . ,  .   , *  ,     )  )    '  ' )   %  % '   /  /   ! -  - / ! # + ! + - 	 (  	   ( &   (    & $ " & "     €?   €       €   €  €?   €           €  €?   €   €       €  €?  €?   €       €   €  €?   €           €  €?   €   €   ¿   €  €?  €?   €       €   €  €?   €           €  €?   €   €  €¿   €  €?  €?   €       €   €  €?   €           €  €?   €   €  À¿   €  €?«ª*=   @                                      €?              €?  €?  €?  €?  €?  €?  €?       ?           ?    «ª*=«ªª=   >«ª*>UUU>  €>UU•>«ªª>  À>UUÕ>«ªê>   ?«ª
+?UU?   ?«ª*?UU5?  @?«ªJ?UUU?  `?«ªj?UUu?  €?UU…?«ªŠ?  ?UU•?«ªš?   ?UU¥?«ªª?  °?UUµ?«ªº?  À?UUÅ?«ªÊ?  Ğ?UUÕ?«ªÚ?  à?UUå?«ªê?  ğ?UUõ?«ªú?   @«ª@UU@  @«ª
+@UU@  @«ª@UU@  @«ª@UU@   @    Î°3+ÌŒ¾M!v?    ÜÌ3(Å‹¾ÄFv?    ¡3ğÅˆ¾\²v?y„¦èœ3»ëƒ¾B[w?    aC 3æ z¾»6x?    ­!3‰j¾~8y?ûæ¦›ã!3ynV¾ıRz?™N‚¦aÊ"3¤Õ?¾·w{?    Ã²#3ˆ†&¾œ—|?    z’$3xÁ
+¾£}?    j_%3ª Ù½ğŒ~?    L&3òš½QF?û€¥ãœ&3/½Ä?e€¤‚ş&3ç-¼6ı?    ˆ0'3>Ì<«ë?š9€%‡0'3Er=ÿŒ?    ş&3£û¾=lâ~?    áœ&3C>Úğ}?    O&3°—">—À|?…\&n_%3lB>İ\{?    w’$3óŒ_>8Óy?    Ã²#3¿Şz>Ó2x?    `Ê"3Û‰>Ê‹v?    ˜ã!3 ì”>ˆît?    ¦!3¡ˆ>>ks?    `C 3ş™¦>rr?    ìœ3d
+­>©ïp?    Ÿ3ÌÃ±>'p?Í'ÛÌ36®´>±‡o?Åèˆ¦©ÄL³®µ>LWo?æÎ§‡æL³Ğ¾´>„o?n„§/HM³B²>6p?§wâM³x—­>IÖp?F0K§ò¬N³Y§>Dçq?V¿§O³ëüŸ>Q.s?‰ô§«P³²ö–>|t?¬G§×ÈQ³Œ>â)v?B§tëR³™ß€>ıÁw?Âj§áT³Ìıg>ùWy?ä§OU³sL>$İz?[å§uùU³ÁP.>vC|?¤l§H»V³ø>~}?ğ §ALW³ÊÜ=‚~?ó\ §î¥W³4î™= F?Ú§MÄW³óO,=ûÅ?a§ï¥W³ëK<cı?Ÿ	§ILW³ÅgÃ¼Zí?6§H»V³¹çd½•™?| §rùU³ó¿±½³?‹û§JU³Xî½ØC~?ÄÂ¦äT³T¾&V}?NÑÂ¦uëR³¯†-¾+L|?r§ÙÈQ³º[E¾I3{?:ƒ¦«P³	›Z¾3z?%“§O³ém¾py?Ì§õ¬N³	–|¾ùx?gƒ§wâM³‘|„¾çGw?¬Ø§+HM³&‰¾-©v?¦ŠæL³9Ö‹¾WDv?    Î°3+ÌŒ¾M!v?ÿÿ²   ?    ÿÿ²   ?    öæÄ&îÿ2“c¾a y?™ v' óÿ2µc¾| y?ŠåD&y 3ßòb¾.¢y?)E¬'¶ 3®”b¾‡§y?Ö	$'ê$ 3sÑa¾•²y?ø/U'ÜA 3k„`¾YÅy?J¼'3g 38ˆ^¾Åáy?`'œ• 3·[¾¥	z?zjÄ&¡Í 3=êW¾–>z?İÛ3'­3/úR¾ğz?Êd'ô[3¾L¾¨Ôz?Z3'n²3œE¾77{?ä•S'½3·;¾o©{?½Oš'|3!“0¾Q*|?°èb'/í3ªp#¾Ø·|?r‰'ùc3:¾¿N}?åÖa'·İ3wm¾9ê}?$X3`Ğe3`SÜ½¦ƒ~?Úá3"ªf3jé¦½ü%?Ùa3tg3\?½q¸?"µ30øg3\£«»ÿ?9¿3&h3Dß&=—É?Éo3‹Šg3Ş÷µ=Ìü~?Æ36~f3¶ö>î˜}?µÑ3Ñûd3×I:>eº{?°3İ1c3ÓÒc>n•y?ä‡3Œ]a3s]ƒ>/nw?äƒ3qÂ_3	¸>‘u?äÍ3§¢^3&D™>ÈBt?aj†¦ò&0³NJœ>Ès?ÂI§R'0³<Dœ>ÿÈs?™ ¨§ù)0³¶"œ>^Îs?z_†¦810³·Î›>ÌÛs?¥Q†§^?0³)1›>éôs?v;¦™V0³Â2š>:t?He¸§y0³è»˜>Xt?K¤Ù§‡¨0³ˆ´–>¯¨t?    Åæ0³Ù”>´u?’¨51³F>l•u?°¢G§
+”1³?Œ>o5v?^Ìø§ô2³Tô†>pòv?Ujç§„2³•’€>şËw?Q2”§3³öq>0Àx?.¨s¬3³`>JËy?™‚§İL4³âOK>Eçz?MÄs§í4³ñQ3>O|?jn§„5³vİ>F+}?H×2Gƒ³fñ=&7~?õı×2‘Jƒ³…£«=p?+-Ø2Agƒ³Š@=·?ÀØ2ÃTƒ³+ˆ<ı?¿×2ƒ³÷gö¼Yâ?AßÖ2Hœ‚³˜‹½¡h?¾áÕ22‚³ÎtÔ½i~?ˆ»Ô2YO³´¾;›}?~ˆÓ2·”€³~û(¾}|?egÒ2ùÉ³b+A¾\g{?nwÑ2A¦~³ÕqS¾¡{z?ÄÕĞ2·á}³É_¾ÓÚy?öæÄ&îÿ2“c¾a y?ÿÿ³   ?   (ÿÿ³   ?   (™Òö'ù½3Ao¾uìx?uŒ¤'ûÁ3³o¾_ìx?/İ‹'5Î3Áo¾ríx?7½'ã3Ân¾±ñx?Äö'Ñ 3Å$n¾ûx?"(à'39m¾¨y?‘×´'’X3_k¾E%y?ìæ'0“3oñh¾ÆIy?cXƒ'í×3Í¢e¾Ùzy?ŠÑ(å&3»Na¾ö¹y?äöÔ' €3³Ï[¾Jz?Ge'ÿâ3ÿT¾—fz?AÍ
+(?O	3È´L¾!Õz?UÜ'ÒÃ	3hÇB¾}S{?{[(D?
+37¾nà{?Õ;¢'•¿
+3âV)¾«y|?ùHÊ'B3Åz¾²}?©Bz3I3‰J¾~Á}?ş@{3dÙI3È‚Û½x†~?MD|3·©J3`Î’½hW?‡ }3ï@K38Aä¼æ?È3}3jK3˜P²<yğ?0´|3™K3]z˜=J?•y{3ÙJ3+b>•ê}?q y3ºŠH3ãâ5>âí{?ædw3™¿F3ô3d>ây?}u3âæD3I—…>Ş!w?Âs3]IC3Ñ„”>1şt?}µq3^.B3ô><}s?æã¨6³‹¡>hìr?Ÿî|¨$+6³£¡>9ér?LÃ¨…F6³Š§¡>¿çr?äÁ¨^f6³š¡>ÿér?u9¨Ç‹6³¸i¡>òr?ş×¨×·6³J
+¡>Ús?sU9¨®ë6³Ko >zs?Ub¨§M(7³ŒŸ>Ü@s?)¹§Ån7³¢S>İss?B®É§ê¿7³î¸œ>D¶s?TiÉ&‘8³g®š>«	t?ù0¨^…8³&˜>zot?Ä$ê§Æú8³x•>Õèt? ~…¦á|9³ya‘>‹vu?•^X¨:³X>úv?76¨E¦:³Ÿï‡>øÏv?W¨àK;³‚>¹šw?¯›¨°ú;³ª“v>¡wx?W“3'˜³ƒ,g>dy?ºÃ“3"Å˜³Ì$P>Ú§z?v”3”}™³çD->şN|?N•3š³OÓ >N÷}?2A•3ˆOš³nÊš=‹D?
+•3 š³y8¯<ñ?fa”3%h™³
+½ÅÚ?>J“3ˆG˜³Áo±½’	?í‘3ŒŞ–³íÖ	¾Œ«}?_}3ab•³‡f3¾e
+|?õ43Ø”³
+US¾&}z?±L3µ“³>Ôg¾cZy?™Òö'ù½3Ao¾uìx?v -0.65 0.4 -1.036835
 v -0.5166667 0.4 -1.036835
 v -0.65 0.4009394 -1.036711
 v -0.5169798 0.4009394 -1.036711
@@ -7471,7 +7493,9 @@ f 835/697/4 869/696/4 868/698/4
 fragment = "Shaders/ShaderCode/2DR_Fragment.fs"
 vertex = "Shaders/ShaderCode/2DR_Vertex.vs"fragment = "Shaders/ShaderCode/SolidTexture.fs"
 vertex = "Shaders/ShaderCode/FSQ.vs"fragment = "Shaders/ShaderCode/Fragment.fs"
-vertex = "Shaders/ShaderCode/Vertex.vs"#if GL_ES
+vertex = "Shaders/ShaderCode/Vertex.vs"fragment = "Shaders/ShaderCode/Fragment.fs"
+vertex = "Shaders/ShaderCode/VertexSkinned.vs"
+skeletal = "true"#if GL_ES
 precision mediump float;
 #endif
 
@@ -7521,7 +7545,7 @@ void main()
 	if (FragColor.a < 0.5)
 		discard;
 }layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoord;
+layout (location = 2) in vec2 aTexCoord;
 
 out vec2 TexCoord;
 
@@ -7543,17 +7567,50 @@ void main()
     FragColor = texture(tex, TexCoord);
 	if (FragColor.a < 0.5)
 		discard;
-}layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoord;
+}layout (location = 0) in vec3 aPosition;
+layout (location = 1) in vec3 aNormal;
+layout (location = 2) in vec2 aUV;
 
 out vec2 TexCoord;
+out vec3 Normal;
 
-uniform mat4 transform;
+uniform mat4 u_mvp;
 
 void main()
 {
-    gl_Position = transform * vec4(aPos, 1.0);
-    TexCoord = aTexCoord;
+    gl_Position = u_mvp * vec4(aPosition, 1.0);
+    TexCoord = aUV;
+	Normal = aNormal;
+}layout (location = 0) in vec3 aPosition;
+layout (location = 1) in vec3 aNormal;
+layout (location = 2) in vec2 aUV;
+layout (location = 3) in uvec4 aJoint;
+layout (location = 4) in vec4 aWeight;
+
+out vec2 TexCoord;
+out vec3 Normal;
+
+uniform mat4 u_mvp;
+
+layout(std140) uniform SkeletonData {
+    mat4 u_boneMatrices[64]; 
+};
+
+void main()
+{
+	vec4 weight = aWeight;
+	
+	mat4 skinMatrix = weight.x * u_boneMatrices[aJoint.x] +
+					  weight.y * u_boneMatrices[aJoint.y] + 
+					  weight.z * u_boneMatrices[aJoint.z] +
+					  weight.w * u_boneMatrices[aJoint.w];
+
+
+    gl_Position = u_mvp * skinMatrix * vec4(aPosition, 1.0);
+    TexCoord = aUV;
+	
+	// Apply skin transformation to normals
+	Normal = mat3(skinMatrix) * aNormal;
 }‰PNG
 
    IHDR         &“	)   sRGB ®Îé   gAMA  ±üa   	pHYs  Ã  ÃÇo¨d   -IDATWcäáça``¸¯¡$™€×®]¤®_¿âl”aR—3ê ¬ôn!L2    IEND®B`‚‰PNG

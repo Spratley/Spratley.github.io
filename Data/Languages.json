@@ -3,6 +3,14 @@
         "header.title": "Spratley",
         "header.title.blog": "Spratley's Blog",
 
+        "header.icon.blog": "Blog",
+        "header.icon.games": "Games",
+        "header.icon.code": "Code",
+        "header.icon.linkedin": "LinkedIn",
+        "header.icon.videos": "Videos",
+
+        "mystats.title": "A lifelong passion for games",
+
         "years": "YEAR",
         "months": "MONTH",
         "days": "DAY",
@@ -26,6 +34,14 @@
     "ja": {
         "header.title": "スプラトリー",
         "header.title.blog": "スプラトリーのブログ",
+
+        "header.icon.blog": "ブログ",
+        "header.icon.games": "ゲーム",
+        "header.icon.code": "コード",
+        "header.icon.linkedin": "リンクドイン",
+        "header.icon.videos": "ビデオ",
+
+        "mystats.title": "ゲーム開発への生涯の情熱",
 
         "years": "年",
         "months": "月",
